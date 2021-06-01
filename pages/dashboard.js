@@ -11,6 +11,8 @@ import SidebarMobile from "../components/SidebarMobile";
 import SidebarDesktop from "../components/SidebarDesktop";
 import DashboardHeader from "../components/DashboardHeader";
 import DashboardBody from "../components/DashboardBody";
+import dbConnect, { jsonify } from "../middleware/mongodb";
+import Commissions from "../models/commissions";
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: false },
@@ -26,8 +28,22 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ];
 
-export default function Dashboard() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+export async function getServerSideProps() {
+  await dbConnect();
+  const commissions = await Commissions.find();
+
+  if (!commissions) {
+    console.log("not");
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      commissions: jsonify(commissions),
+    },
+  };
+}
 
 export default function Dashboard({ commissions }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
