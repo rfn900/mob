@@ -2,7 +2,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function SidebarDesktop({ navigation }) {
+export default function SidebarDesktop({ navigation, setNavItem }) {
+  const handleClick = (index) => {
+    navigation.forEach((item) => {
+      item.current = false;
+    });
+    setNavItem(index);
+  };
+
   return (
     <div className="hidden md:flex md:flex-shrink-0">
       <div className="flex flex-col w-64">
@@ -25,7 +32,7 @@ export default function SidebarDesktop({ navigation }) {
           </div>
           <div className="flex flex-col flex-1 overflow-y-auto">
             <nav className="flex-1 px-2 py-4 bg-gray-800 space-y-1">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -35,6 +42,7 @@ export default function SidebarDesktop({ navigation }) {
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                   )}
+                  onClick={() => handleClick(index)}
                 >
                   <item.icon
                     className={classNames(

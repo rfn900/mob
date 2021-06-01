@@ -13,7 +13,7 @@ import DashboardHeader from "../components/DashboardHeader";
 import DashboardBody from "../components/DashboardBody";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
+  { name: "Dashboard", href: "#", icon: HomeIcon, current: false },
   { name: "Team", href: "#", icon: UsersIcon, current: false },
   { name: "Projects", href: "#", icon: FolderIcon, current: false },
   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
@@ -29,6 +29,11 @@ const userNavigation = [
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+export default function Dashboard({ commissions }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [navItem, setNavItem] = useState(0);
+  navigation[navItem].current = true;
+  console.log(commissions);
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
       <SidebarMobile
@@ -37,9 +42,9 @@ export default function Dashboard() {
         navigation={navigation}
       />
 
-      <SidebarDesktop navigation={navigation} />
+      <SidebarDesktop navigation={navigation} setNavItem={setNavItem} />
 
-      <div className="flex flex-col flex-1 w-0 bg-indigo-50 overflow-hidden">
+      <div className="flex flex-col flex-1 w-0 overflow-hidden bg-indigo-50">
         <DashboardHeader
           userNavigation={userNavigation}
           setSidebarOpen={setSidebarOpen}

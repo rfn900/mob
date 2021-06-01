@@ -14,10 +14,16 @@ module.exports = {
       spacing: {
         phone: "780px",
       },
+      height: {
+        100: "28rem",
+        104: "32rem",
+      },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      transitionProperty: ["focus"],
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };
