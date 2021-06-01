@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Nav from "../components/Nav";
 import Hero from "../components/Hero";
-import { dbConnect } from "../middleware/mongodb";
-import Commissions from "../models/commissions";
 
 export default function Home() {
   return (
@@ -16,15 +14,4 @@ export default function Home() {
       <Hero />
     </div>
   );
-}
-
-export async function getServerSideProps(context) {
-  dbConnect();
-  const commissions = await Commissions.find({}).exec();
-
-  return {
-    props: {
-      commissions: jsonify(commissions),
-    },
-  };
 }

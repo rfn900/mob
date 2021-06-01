@@ -1,4 +1,5 @@
 import { ArrowSmDownIcon, ArrowSmUpIcon } from "@heroicons/react/solid";
+import { useState } from "react";
 import { Chart } from "react-google-charts";
 
 const stats = [
@@ -36,25 +37,17 @@ const stats = [
   },
 ];
 
-const data = [
-  ["Year", "Sales", "Expenses"],
-  ["2013", 1000, 400],
-  ["2014", 1170, 460],
-  ["2015", 660, 1120],
-  ["2017", 1030, 540],
-  ["2018", 1230, 640],
-  ["2019", 921, 240],
-  ["2020", 1130, 670],
-  ["2021", 1630, 940],
-  ["2022", 630, 210],
-  ["2023", 1070, 421],
-];
 const options = {
   //title: "Company Performance",
-  isStacked: true,
-  legend: { position: "top", maxLines: 3 },
-  vAxis: { minValue: 0, gridlines: { count: 0 } },
-  chartArea: { width: "85%", height: "70%" },
+  isStacked: false,
+  legend: { position: "in", maxLines: 3 },
+  vAxis: { textPosition: "none", gridlines: { count: 0 } },
+  animation: {
+    duration: 1000,
+    easing: "out",
+  },
+  hAxis: { textStyle: { fontSize: 9 } },
+  chartArea: { width: "95%", height: "70%" },
   // lineWidth: 25
 };
 
@@ -62,7 +55,25 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function DashboardBody() {
+export default function DashboardBody({ data }) {
+  const [timeWindowMin, setTimeWindowMin] = useState(data.length - 12);
+  const [timeWindowMax, setTimeWindowMax] = useState(data.length);
+
+  const filteredData = data.filter(
+    (item, index) => index >= timeWindowMin && index <= timeWindowMax
+  );
+
+  filteredData.unshift([
+    "month",
+    "adtraction",
+    "tradedoubler",
+    "awin",
+    "adrecord",
+    "misc",
+    "total",
+  ]);
+
+  console.log(filteredData);
   return (
     <div className="py-6">
       <div className="px-2 mx-auto sm:px-6 md:px-8">
@@ -137,13 +148,70 @@ export default function DashboardBody() {
                 </div>
               </div>
             ))}
-            <div className="flex items-center overflow-hidden justify-center w-full bg-white shadow-lg rounded-xl md:col-span-2 xl:col-span-3 h-72 lg:h-104">
+            <div className="relative flex flex-col items-center justify-around w-full px-4 overflow-hidden bg-white shadow-lg group rounded-xl md:col-span-2 xl:col-span-3 h-104 lg:h-104">
+              <h2 className="mt-8 font-mono text-2xl font-semibold">
+                Commissions
+              </h2>
+              <div className="flex items-center w-auto mt-8 text-xs justify-evenly md:text-base">
+                <span
+                  className={`px-4 rounded-l-full cursor-pointer 
+                              ${
+                                timeWindowMin === data.length - 12
+                                  ? "bg-indigo-600 text-gray-50"
+                                  : "bg-indigo-50 text-gray-600"
+                              }`}
+                  onClick={() => {
+                    setTimeWindowMin(data.length - 12);
+                    setTimeWindowMax(data.length);
+                  }}
+                >
+                  Year to Date
+                </span>
+                <span className="w-px h-full bg-indigo-800"></span>
+                <span
+                  className={`px-4 cursor-pointer 
+                              ${
+                                timeWindowMin ===
+                                data.length - new Date().getMonth()
+                                  ? "bg-indigo-600 text-gray-50"
+                                  : "bg-indigo-50 text-gray-600"
+                              }`}
+                  onClick={() => {
+                    setTimeWindowMin(data.length - new Date().getMonth());
+                    setTimeWindowMax(data.length);
+                  }}
+                >
+                  This Year
+                </span>
+                <span className="w-px h-full bg-indigo-800"></span>
+                <span
+                  className={`px-4 rounded-r-full cursor-pointer 
+                              ${
+                                timeWindowMin ===
+                                data.length - new Date().getMonth() - 12
+                                  ? "bg-indigo-600 text-gray-50"
+                                  : "bg-indigo-50 text-gray-600"
+                              }`}
+                  onClick={() => {
+                    setTimeWindowMin(data.length - new Date().getMonth() - 12);
+                    setTimeWindowMax(data.length - new Date().getMonth() - 1);
+                  }}
+                >
+                  Last Year
+                </span>
+              </div>
+              <span
+                className="absolute z-10 flex items-center justify-center w-10 h-10 text-3xl bg-indigo-600 rounded-full opacity-0 cursor-pointer transition text-gray-50 top-8 right-8 group-hover:opacity-100"
+                onClick={() => console.log("aqui")}
+              >
+                +
+              </span>
               <Chart
                 width={"100%"}
-                height={"100%"}
+                height={"95%"}
                 chartType="AreaChart"
                 loader={<div>Loading Chart</div>}
-                data={data}
+                data={filteredData}
                 options={options}
                 // For tests
                 rootProps={{ "data-testid": "1" }}

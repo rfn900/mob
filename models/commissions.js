@@ -15,7 +15,7 @@ var monthly_results = new Schema({
 mongoose.models = {};
 
 var Commissions =
-  mongoose.models["affiliate_report"] ||
+  mongoose.models["monthly_results"] ||
   mongoose.model("monthly_results", monthly_results, "monthly_results");
 
 export default Commissions;

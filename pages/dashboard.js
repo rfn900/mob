@@ -13,6 +13,7 @@ import DashboardHeader from "../components/DashboardHeader";
 import DashboardBody from "../components/DashboardBody";
 import dbConnect, { jsonify } from "../middleware/mongodb";
 import Commissions from "../models/commissions";
+import moment from "moment";
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: false },
@@ -27,23 +28,6 @@ const userNavigation = [
   { name: "Settings", href: "#" },
   { name: "Sign out", href: "#" },
 ];
-
-export async function getServerSideProps() {
-  await dbConnect();
-  const commissions = await Commissions.find();
-
-  if (!commissions) {
-    console.log("not");
-    return {
-      notFound: true,
-    };
-  }
-  return {
-    props: {
-      commissions: jsonify(commissions),
-    },
-  };
-}
 
 export default function Dashboard({ commissions }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -66,9 +50,38 @@ export default function Dashboard({ commissions }) {
           setSidebarOpen={setSidebarOpen}
         />
         <main className="relative flex-1 overflow-y-auto focus:outline-none">
-          <DashboardBody />
+          <DashboardBody data={commissions} />
         </main>
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  await dbConnect();
+  const dbRes = await Commissions.find();
+
+  const data = dbRes.map((commissionObj) => {
+    const resultsArray = [];
+    const month = moment(commissionObj.date).format("MMM");
+    resultsArray.push(month);
+    let sum = 0;
+    commissionObj.results.forEach((result) => {
+      resultsArray.push(Number(result.value));
+      sum += Number(result.value);
+    });
+    resultsArray.push(sum);
+    return resultsArray;
+  });
+
+  if (!dbRes) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      commissions: jsonify(data),
+    },
+  };
 }
