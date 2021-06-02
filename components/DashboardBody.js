@@ -1,66 +1,15 @@
-import { ArrowSmDownIcon, ArrowSmUpIcon } from "@heroicons/react/solid";
 import { useState } from "react";
-import { Chart } from "react-google-charts";
+import CardAudience from "./CardAudience";
+import CardGraph from "./CardGraph";
+import CardNotion from "./CardNotion";
+import CardSmall from "./CardSmall";
+import CardWidget from "./CardWidget";
 
-const stats = [
-  {
-    name: "Adtraction",
-    stat: "21 492",
-    change: "12%",
-    changeType: "increase",
-    lastMonht: "19 239",
-    thisYear: "120 231",
-  },
-  {
-    name: "Adrecord",
-    stat: "19 232",
-    change: "2.02%",
-    changeType: "increase",
-    lastMonht: "14 420",
-    thisYear: "98 942",
-  },
-  {
-    name: "Tradedoubler",
-    stat: "6 549",
-    change: "4.05%",
-    changeType: "decrease",
-    lastMonht: "6 982",
-    thisYear: "48 392",
-  },
-  {
-    name: "Awin",
-    stat: "3 542",
-    change: "4.05%",
-    changeType: "decrease",
-    lastMonht: "4 120",
-    thisYear: "35 345",
-  },
-];
-
-const options = {
-  //title: "Company Performance",
-  isStacked: false,
-  legend: { position: "in", maxLines: 3 },
-  vAxis: { textPosition: "none", gridlines: { count: 0 } },
-  animation: {
-    duration: 1000,
-    easing: "out",
-  },
-  hAxis: { textStyle: { fontSize: 9 } },
-  chartArea: { width: "95%", height: "70%" },
-  // lineWidth: 25
-};
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function DashboardBody({ data }) {
+export default function DashboardBody({ data, stats }) {
   const [timeWindowMin, setTimeWindowMin] = useState(data.length - 12);
   const [timeWindowMax, setTimeWindowMax] = useState(data.length);
-
   const filteredData = data.filter(
-    (item, index) => index >= timeWindowMin && index <= timeWindowMax
+    (_, index) => index >= timeWindowMin && index <= timeWindowMax
   );
 
   filteredData.unshift([
