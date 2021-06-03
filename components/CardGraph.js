@@ -15,9 +15,11 @@ const options = {
 };
 
 function CardGraph({
-  dataLength,
   filteredData,
   timeWindowMin,
+  yearToDateInterval,
+  thisYearInterval,
+  lastYearInterval,
   setTimeWindowMin,
   setTimeWindowMax,
 }) {
@@ -28,13 +30,13 @@ function CardGraph({
         <span
           className={`px-4 rounded-l-full cursor-pointer 
                               ${
-                                timeWindowMin === dataLength - 12
+                                timeWindowMin === yearToDateInterval[0]
                                   ? "bg-indigo-600 text-gray-50"
                                   : "bg-indigo-50 text-gray-600"
                               }`}
           onClick={() => {
-            setTimeWindowMin(dataLength - 12);
-            setTimeWindowMax(dataLength);
+            setTimeWindowMin(yearToDateInterval[0]);
+            setTimeWindowMax(yearToDateInterval[1]);
           }}
         >
           Year to Date
@@ -43,14 +45,13 @@ function CardGraph({
         <span
           className={`px-4 cursor-pointer 
                               ${
-                                timeWindowMin ===
-                                dataLength - new Date().getMonth()
+                                timeWindowMin === thisYearInterval[0]
                                   ? "bg-indigo-600 text-gray-50"
                                   : "bg-indigo-50 text-gray-600"
                               }`}
           onClick={() => {
-            setTimeWindowMin(dataLength - new Date().getMonth());
-            setTimeWindowMax(dataLength);
+            setTimeWindowMin(thisYearInterval[0]);
+            setTimeWindowMax(thisYearInterval[1]);
           }}
         >
           This Year
@@ -59,14 +60,13 @@ function CardGraph({
         <span
           className={`px-4 rounded-r-full cursor-pointer 
                               ${
-                                timeWindowMin ===
-                                dataLength - new Date().getMonth() - 12
+                                timeWindowMin === lastYearInterval[0]
                                   ? "bg-indigo-600 text-gray-50"
                                   : "bg-indigo-50 text-gray-600"
                               }`}
           onClick={() => {
-            setTimeWindowMin(dataLength - new Date().getMonth() - 12);
-            setTimeWindowMax(dataLength - new Date().getMonth() - 1);
+            setTimeWindowMin(lastYearInterval[0]);
+            setTimeWindowMax(lastYearInterval[1]);
           }}
         >
           Last Year

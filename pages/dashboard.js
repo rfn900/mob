@@ -14,6 +14,7 @@ import DashboardBody from "../components/DashboardBody";
 import dbConnect, { jsonify } from "../middleware/mongodb";
 import Commissions from "../models/commissions";
 import moment from "moment";
+import { calculateTotalRevenue } from "../utils/dataFunctions";
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: false },
@@ -89,7 +90,8 @@ export async function getServerSideProps() {
       change: truncateChange,
       changeType: change > 0 ? "increase" : "decrease",
       lastMonht: lastMonthValue,
-      thisYear: getThisYearsCommission(data, i),
+      //thisYear: getThisYearsCommission(data, i + 1),
+      thisYear: calculateTotalRevenue(data, "thisYear", i + 1),
     });
   }
 
@@ -108,11 +110,11 @@ export async function getServerSideProps() {
 
 function getThisYearsCommission(data, programIndex) {
   const filteredData = data.filter(
-    (item, index) => index >= data.length - new Date().getMonth()
+    (_, index) => index >= data.length - new Date().getMonth()
   );
   let sum = 0;
   filteredData.forEach((value) => {
-    sum += value[programIndex + 1];
+    sum += value[programIndex];
   });
   return sum;
 }

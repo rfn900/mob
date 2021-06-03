@@ -18,6 +18,9 @@ module.exports = {
         100: "28rem",
         104: "32rem",
       },
+      width: {
+        xlfull: "200%",
+      },
     },
   },
   variants: {
