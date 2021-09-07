@@ -9,7 +9,7 @@ function Nav() {
   });
 
   return (
-    <div className="fixed top-0 z-10 flex items-center justify-center w-screen h-20 px-6 m-auto bg-white sm:px-12">
+    <div className="fixed top-0 z-10 flex items-center justify-center w-screen h-20 px-6 m-auto bg-transparent sm:px-12">
       <div className="flex items-center justify-between w-full max-w-6xl">
         <div className="flex items-center">
           <span className="text-4xl font-bold font-display font-body">MOG</span>

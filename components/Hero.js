@@ -1,7 +1,11 @@
+import HeroBlobSVG from "./HeroBlobSVG";
+import HeroBlobSVGMobile from "./HeroBlobSVGMobile";
 import HeroSvg from "./HeroSvg";
 function Hero() {
   return (
-    <div className="relative flex items-center justify-center clip-path-hero bg-indigo-50 max-h-full xl:h-screen py-24">
+    <div className="relative flex items-center justify-center max-h-full py-24 xl:h-screen">
+      <HeroBlobSVGMobile className="md:hidden" />
+      <HeroBlobSVG className="hidden md:block" />
       <div className="relative flex flex-col w-full max-w-6xl mt-12 xl:flex-row">
         <div className="relative flex flex-col p-6 opacity-0 md:p-12 xl:p-0 animate-load">
           <p className="mb-1 text-sm text-gray-600">Content Marketing Agency</p>
