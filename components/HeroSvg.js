@@ -1,7 +1,7 @@
 function HeroSvg() {
   return (
     <svg
-      className="absolute bottom-16 w-96 -right-1 md:w-1/2 lg:right-10 lg:top-44"
+      className="w-full ml-auto opacity-0 md:w-2/3 xl:w-1/2 animate-load"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="700 100 1160 900"
     >

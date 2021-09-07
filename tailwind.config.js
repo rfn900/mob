@@ -11,6 +11,9 @@ module.exports = {
         display: ["Bebas Neue"],
         body: ["Ubuntu Mono"],
       },
+      screens: {
+        xs: "360px",
+      },
       spacing: {
         phone: "780px",
       },
@@ -20,6 +23,18 @@ module.exports = {
       },
       width: {
         xlfull: "200%",
+      },
+      maxWidth: {
+        "7xl": "76rem",
+        "8xl": "80rem",
+        "9xl": "84rem",
+        "10xl": "88rem",
+      },
+      maxHeight: {
+        phone: "840px",
+      },
+      minHeight: {
+        phone: "840px",
       },
     },
   },

@@ -1,25 +1,27 @@
 import HeroSvg from "./HeroSvg";
 function Hero() {
   return (
-    <div className="relative h-phone bg-indigo-50 overflow-hidden max-w-10xl lg:h-screen">
-      <div className="absolute flex flex-col max-w-2xl pl-4 top-40 md:top-60 lg:px-28 lg:top-52 xl:left-8 2xl:px-4 2xl:left-40">
-        <p className="mb-1 text-sm text-gray-600">Content Marketing Agency</p>
-        <h1 className="mt-1 font-sans text-3xl font-bold md:text-5xl 2xl:text-6xl">
-          MARSian Online Group
-        </h1>
-        <h4 className="mt-4 text-lg font-bold md:text-2xl md:mt-8 lg:mt-8">
-          We take care of the content.
-          <br className="" />
-          <div className="relative inline">
-            You make the sale.
-            <span className="absolute bottom-0 left-0 w-full bg-yellow-300 bg-opacity-50 h-1/3 -z-10"></span>
-          </div>
-        </h4>
-        <button className="w-40 mt-8 lg:mt-12 md:mt-8 btn-indigo">
-          Read More
-        </button>
+    <div className="relative flex items-center justify-center clip-path-hero bg-indigo-50 max-h-full xl:h-screen py-24">
+      <div className="relative flex flex-col w-full max-w-6xl mt-12 xl:flex-row">
+        <div className="relative flex flex-col p-6 opacity-0 md:p-12 xl:p-0 animate-load">
+          <p className="mb-1 text-sm text-gray-600">Content Marketing Agency</p>
+          <h1 className="mt-1 font-sans text-3xl font-bold sm:text-5xl 2xl:text-6xl">
+            MARSian Online Group
+          </h1>
+          <h4 className="relative z-0 mt-4 text-lg font-bold sm:text-2xl md:mt-8 lg:mt-8">
+            We take care of the content.
+            <br className="" />
+            <div className="relative inline">
+              <span className="relative z-10">You make the sale.</span>
+              <span className="absolute bottom-0 z-0 w-11/12 bg-yellow-300 h-3/5 top-3 md:top-4 left-5"></span>
+            </div>
+          </h4>
+          <button className="w-40 mt-8 lg:mt-12 md:mt-8 btn-indigo">
+            Read More
+          </button>
+        </div>
+        <HeroSvg />
       </div>
-      <HeroSvg />
     </div>
   );
 }
