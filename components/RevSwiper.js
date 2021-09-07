@@ -20,19 +20,16 @@ const RevSwiper = ({ thisYearRevenue, yearToDateRevenue, lastYearRevenue }) => {
         <div className="mt-2">
           <p className="p-3 mb-2 font-mono font-bold w-40 text-center text-indigo-800 bg-yellow-400 lg:w-96 lg:p-4 lg:text-2xl rounded-2xl">
             This Year: {thisYearRevenue}
-            <span className="ml-1 text-xs">SEK</span>
           </p>
         </div>
         <div className="mt-2">
           <p className="w-40 p-3 mb-2 font-mono font-bold text-center text-indigo-800 bg-yellow-400 lg:w-96 lg:p-4 lg:text-2xl rounded-2xl">
             Year to Date: {yearToDateRevenue}
-            <span className="ml-1 text-xs">SEK</span>
           </p>
         </div>
         <div className="mt-2">
           <p className="w-40 p-3 mb-2 font-mono font-bold text-center text-indigo-800 bg-yellow-400 lg:w-96 lg:p-4 lg:text-2xl rounded-2xl">
             Last Year: {lastYearRevenue}
-            <span className="ml-1 text-xs">SEK</span>
           </p>
         </div>
       </Swiper>

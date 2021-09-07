@@ -31,8 +31,8 @@ function CardGraph({
           className={`px-4 rounded-l-full cursor-pointer 
                               ${
                                 timeWindowMin === yearToDateInterval[0]
-                                  ? "bg-indigo-600 text-gray-50"
-                                  : "bg-indigo-50 text-gray-600"
+                                  ? "bg-indigo-600 text-indigo-50"
+                                  : "bg-indigo-50 text-indigo-600"
                               }`}
           onClick={() => {
             setTimeWindowMin(yearToDateInterval[0]);
@@ -46,8 +46,8 @@ function CardGraph({
           className={`px-4 cursor-pointer 
                               ${
                                 timeWindowMin === thisYearInterval[0]
-                                  ? "bg-indigo-600 text-gray-50"
-                                  : "bg-indigo-50 text-gray-600"
+                                  ? "bg-indigo-600 text-indigo-50"
+                                  : "bg-indigo-50 text-indigo-600"
                               }`}
           onClick={() => {
             setTimeWindowMin(thisYearInterval[0]);
@@ -61,8 +61,8 @@ function CardGraph({
           className={`px-4 rounded-r-full cursor-pointer 
                               ${
                                 timeWindowMin === lastYearInterval[0]
-                                  ? "bg-indigo-600 text-gray-50"
-                                  : "bg-indigo-50 text-gray-600"
+                                  ? "bg-indigo-600 text-indigo-50"
+                                  : "bg-indigo-50 text-indigo-600"
                               }`}
           onClick={() => {
             setTimeWindowMin(lastYearInterval[0]);
@@ -72,12 +72,7 @@ function CardGraph({
           Last Year
         </span>
       </div>
-      <span
-        className="absolute z-10 flex items-center justify-center w-10 h-10 text-3xl bg-indigo-600 rounded-full opacity-0 cursor-pointer transition text-gray-50 top-8 right-8 group-hover:opacity-100"
-        onClick={() => console.log("aqui")}
-      >
-        +
-      </span>
+
       <Chart
         width={"100%"}
         height={"95%"}

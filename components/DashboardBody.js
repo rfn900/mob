@@ -4,9 +4,14 @@ import CardGraph from "./CardGraph";
 import CardNotion from "./CardNotion";
 import CardSmall from "./CardSmall";
 import CardWidget from "./CardWidget";
-import { calculateTotalRevenue, dataIntervals } from "../utils/dataFunctions";
+import {
+  calculateTotalRevenue,
+  currencyFormatter,
+  dataIntervals,
+} from "../utils/dataFunctions";
 import Swiper from "react-id-swiper";
 import RevSwiper from "./RevSwiper";
+import RocketSVG from "./RocketSVG";
 
 export default function DashboardBody({ data, stats }) {
   const yearToDateInterval = dataIntervals(data.length).yearToDate;
@@ -35,30 +40,18 @@ export default function DashboardBody({ data, stats }) {
 
   return (
     <div className="py-6">
-      <div className="flex justify-center px-4 mx-4 bg-indigo-900 rounded-xl h-52 text-indigo-50 md:pl-8 md:mx-8">
-        <div className="relative flex w-1/2">
-          <svg
-            className=""
-            width="300"
-            height="300"
-            viewBox="40 55 160 130"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="#FF0066"
-              d="M33.7,-25.5C43.8,-14.2,52.2,-0.2,48.7,9.5C45.2,19.2,29.9,24.6,15.7,30.7C1.6,36.7,-11.3,43.4,-25.1,41C-39,38.7,-53.9,27.2,-57.5,12.7C-61.2,-1.8,-53.6,-19.3,-42.2,-30.9C-30.7,-42.5,-15.4,-48.4,-1.8,-47C11.8,-45.5,23.6,-36.9,33.7,-25.5Z"
-              transform="translate(100 100)"
-            />
-          </svg>
+      <div className="flex justify-center px:2 sm:px-4 mx-4 bg-indigo-900 rounded-xl h-52 text-indigo-50 md:pl-8 md:mx-8">
+        <div className="relative flex justify-center w-1/2">
+          <RocketSVG />
           <img src="rocket.png" className="absolute w-48 z-1 top-3" alt="" />
         </div>
 
         <div className="flex flex-col justify-center w-1/2 2xl:w-1/3 overflow-x-hidden py-6 space-y-4">
           <h2 className="font-bold md:text-2xl">It is taking off!</h2>
           <RevSwiper
-            thisYearRevenue={thisYearRevenue}
-            yearToDateRevenue={yearToDateRevenue}
-            lastYearRevenue={lastYearRevenue}
+            thisYearRevenue={currencyFormatter(thisYearRevenue)}
+            yearToDateRevenue={currencyFormatter(yearToDateRevenue)}
+            lastYearRevenue={currencyFormatter(lastYearRevenue)}
           />
         </div>
       </div>

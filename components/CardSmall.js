@@ -1,4 +1,5 @@
 import { ArrowSmUpIcon, ArrowSmDownIcon } from "@heroicons/react/solid";
+import { currencyFormatter } from "../utils/dataFunctions";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -10,12 +11,11 @@ function CardSmall({ item }) {
         src="card-skin3.png"
         className="absolute inset-0 w-full opacity-50 h-52"
       />
-      <span className="absolute z-0 w-48 h-48 bg-indigo-800 rounded-full -top-4 -right-10 bg-opacity-5"></span>
+      <div className="absolute z-0 w-48 h-48 bg-indigo-800 rounded-full -top-4 -right-10 bg-opacity-5"></div>
       <dt className="text-base font-semibold text-gray-900">{item.name}</dt>
       <dd className="relative z-10 flex items-baseline justify-between mt-1 md:block lg:flex">
         <div className="flex items-baseline text-2xl font-bold text-indigo-600">
-          {item.stat}
-          <span className="ml-1 text-sm">SEK</span>
+          {currencyFormatter(item.stat)}
         </div>
         <div
           className={classNames(
@@ -42,11 +42,15 @@ function CardSmall({ item }) {
       <div className="flex justify-between mt-auto">
         <div className="space-y-1">
           <h3 className="text-xs text-gray-400">Last Month's</h3>
-          <h4 className="text-sm text-indigo-600">{item.lastMonht} SEK</h4>
+          <h4 className="text-sm text-indigo-600">
+            {currencyFormatter(item.lastMonht)}
+          </h4>
         </div>
         <div className="space-y-1">
           <h3 className="text-xs text-gray-400">This Year</h3>
-          <h4 className="text-sm text-indigo-600">{item.thisYear} SEK</h4>
+          <h4 className="text-sm text-indigo-600">
+            {currencyFormatter(item.thisYear)}
+          </h4>
         </div>
       </div>
     </div>
