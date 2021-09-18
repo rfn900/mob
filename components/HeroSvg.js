@@ -14,10 +14,10 @@ function HeroSvg() {
           y2="0.607"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0.042" stop-color="#fff" />
-          <stop offset="0.603" stop-color="#c9bfdf" />
-          <stop offset="0.797" stop-color="#cec6e3" />
-          <stop offset="1" stop-color="#fff" />
+          <stop offset="0.042" stopColor="#fff" />
+          <stop offset="0.603" stopColor="#c9bfdf" />
+          <stop offset="0.797" stopColor="#cec6e3" />
+          <stop offset="1" stopColor="#fff" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-2"
@@ -27,10 +27,10 @@ function HeroSvg() {
           y2="0.791"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0.214" stop-color="#fff" />
-          <stop offset="0.603" stop-color="#c9bfdf" />
-          <stop offset="0.797" stop-color="#cec6e3" />
-          <stop offset="1" stop-color="#fff" />
+          <stop offset="0.214" stopColor="#fff" />
+          <stop offset="0.603" stopColor="#c9bfdf" />
+          <stop offset="0.797" stopColor="#cec6e3" />
+          <stop offset="1" stopColor="#fff" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-3"
@@ -40,10 +40,10 @@ function HeroSvg() {
           y2="0.174"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0.058" stop-color="#fff" />
-          <stop offset="0.668" stop-color="#c9bfdf" />
-          <stop offset="0.797" stop-color="#cec6e3" />
-          <stop offset="1" stop-color="#fff" />
+          <stop offset="0.058" stopColor="#fff" />
+          <stop offset="0.668" stopColor="#c9bfdf" />
+          <stop offset="0.797" stopColor="#cec6e3" />
+          <stop offset="1" stopColor="#fff" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-4"
@@ -53,10 +53,10 @@ function HeroSvg() {
           y2="0.553"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0.393" stop-color="#fff" />
-          <stop offset="0.603" stop-color="#c9bfdf" />
-          <stop offset="0.797" stop-color="#cec6e3" />
-          <stop offset="1" stop-color="#fff" />
+          <stop offset="0.393" stopColor="#fff" />
+          <stop offset="0.603" stopColor="#c9bfdf" />
+          <stop offset="0.797" stopColor="#cec6e3" />
+          <stop offset="1" stopColor="#fff" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-5"
@@ -66,8 +66,8 @@ function HeroSvg() {
           y2="1.63"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0.051" stop-color="#f2a2b8" />
-          <stop offset="1" stop-color="#fff" />
+          <stop offset="0.051" stopColor="#f2a2b8" />
+          <stop offset="1" stopColor="#fff" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-6"
@@ -77,9 +77,9 @@ function HeroSvg() {
           y2="0.125"
           gradientUnits="objectBoundingBox"
         >
-          <stop offset="0" stop-color="#ef8dab" />
-          <stop offset="0.6" stop-color="#f6bdd2" />
-          <stop offset="1" stop-color="#fff" />
+          <stop offset="0" stopColor="#ef8dab" />
+          <stop offset="0.6" stopColor="#f6bdd2" />
+          <stop offset="1" stopColor="#fff" />
         </linearGradient>
       </defs>
       <g id="Shape_BG" data-name="Shape BG">
@@ -99,8 +99,8 @@ function HeroSvg() {
         transform="translate(743 213)"
         fill="none"
         stroke="#3730A3"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       >
         <circle cx="15" cy="15" r="15" stroke="none" />
         <circle cx="15" cy="15" r="14" fill="none" />
@@ -147,8 +147,8 @@ function HeroSvg() {
         transform="translate(83 882)"
         fill="none"
         stroke="#fccc81"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       >
         <circle cx="6" cy="6" r="6" stroke="none" />
         <circle cx="6" cy="6" r="5" fill="none" />
@@ -199,8 +199,8 @@ function HeroSvg() {
               transform="translate(0.52 26.752)"
               fill="none"
               stroke="#000"
-              stroke-miterlimit="10"
-              stroke-width="2.389"
+              strokeMiterlimit="10"
+              strokeWidth="2.389"
             />
             <path
               id="Path-6"
@@ -209,9 +209,9 @@ function HeroSvg() {
               transform="translate(4.706 15.305)"
               fill="none"
               stroke="#000"
-              stroke-miterlimit="10"
-              stroke-width="2.389"
-              stroke-dasharray="5.614 5.614"
+              strokeMiterlimit="10"
+              strokeWidth="2.389"
+              strokeDasharray="5.614 5.614"
             />
             <path
               id="Path-7"
@@ -220,8 +220,8 @@ function HeroSvg() {
               transform="translate(141.332 12.808)"
               fill="none"
               stroke="#000"
-              stroke-miterlimit="10"
-              stroke-width="2.389"
+              strokeMiterlimit="10"
+              strokeWidth="2.389"
             />
             <path
               id="Path-8"
@@ -230,9 +230,9 @@ function HeroSvg() {
               transform="translate(147.659 2.552)"
               fill="none"
               stroke="#000"
-              stroke-miterlimit="10"
-              stroke-width="2.389"
-              stroke-dasharray="5.894 5.894"
+              strokeMiterlimit="10"
+              strokeWidth="2.389"
+              strokeDasharray="5.894 5.894"
             />
             <path
               id="Path-9"
@@ -241,8 +241,8 @@ function HeroSvg() {
               transform="translate(194.512 0.322)"
               fill="none"
               stroke="#000"
-              stroke-miterlimit="10"
-              stroke-width="2.389"
+              strokeMiterlimit="10"
+              strokeWidth="2.389"
             />
           </g>
         </g>
@@ -396,8 +396,8 @@ function HeroSvg() {
             transform="translate(29.443 27.517)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="3.417"
+            strokeMiterlimit="10"
+            strokeWidth="3.417"
           />
           <ellipse
             id="Oval-11"
@@ -409,8 +409,8 @@ function HeroSvg() {
             transform="translate(0.269 30.247)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="3.417"
+            strokeMiterlimit="10"
+            strokeWidth="3.417"
           />
           <ellipse
             id="Oval-12"
@@ -422,8 +422,8 @@ function HeroSvg() {
             transform="translate(16.696 0.486)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="3.417"
+            strokeMiterlimit="10"
+            strokeWidth="3.417"
           />
           <path
             id="Path-29"
@@ -432,8 +432,8 @@ function HeroSvg() {
             transform="translate(14.379 36.596)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="3.417"
+            strokeMiterlimit="10"
+            strokeWidth="3.417"
           />
           <path
             id="Path-30"
@@ -442,8 +442,8 @@ function HeroSvg() {
             transform="translate(27.83 14.12)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="3.417"
+            strokeMiterlimit="10"
+            strokeWidth="3.417"
           />
         </g>
         <g id="Group-5" data-name="Group" transform="translate(857 174)">
@@ -529,8 +529,8 @@ function HeroSvg() {
           transform="translate(470 188)"
           fill="none"
           stroke="#5c7a78"
-          stroke-miterlimit="10"
-          stroke-width="1.139"
+          strokeMiterlimit="10"
+          strokeWidth="1.139"
         />
         <path
           id="Path-39"
@@ -539,8 +539,8 @@ function HeroSvg() {
           transform="translate(470 199)"
           fill="none"
           stroke="#5c7a78"
-          stroke-miterlimit="10"
-          stroke-width="1.139"
+          strokeMiterlimit="10"
+          strokeWidth="1.139"
         />
         <path
           id="Path-40"
@@ -549,8 +549,8 @@ function HeroSvg() {
           transform="translate(470 209)"
           fill="none"
           stroke="#5c7a78"
-          stroke-miterlimit="10"
-          stroke-width="1.139"
+          strokeMiterlimit="10"
+          strokeWidth="1.139"
         />
         <path
           id="Path-41"
@@ -572,8 +572,8 @@ function HeroSvg() {
             transform="translate(0.473 0.674)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="1.139"
+            strokeMiterlimit="10"
+            strokeWidth="1.139"
           />
           <path
             id="Path-43"
@@ -589,8 +589,8 @@ function HeroSvg() {
             transform="translate(0.473 0.674)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="1.139"
+            strokeMiterlimit="10"
+            strokeWidth="1.139"
           />
         </g>
         <path
@@ -613,8 +613,8 @@ function HeroSvg() {
             transform="translate(0.412 0.455)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="1.139"
+            strokeMiterlimit="10"
+            strokeWidth="1.139"
           />
           <path
             id="Path-47"
@@ -630,8 +630,8 @@ function HeroSvg() {
             transform="translate(0.412 0.455)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="1.139"
+            strokeMiterlimit="10"
+            strokeWidth="1.139"
           />
         </g>
         <g
@@ -647,8 +647,8 @@ function HeroSvg() {
             transform="translate(0.587 0.164)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="1.139"
+            strokeMiterlimit="10"
+            strokeWidth="1.139"
           />
           <path
             id="Path-50"
@@ -664,8 +664,8 @@ function HeroSvg() {
             transform="translate(0.587 0.164)"
             fill="none"
             stroke="#fff"
-            stroke-miterlimit="10"
-            stroke-width="1.139"
+            strokeMiterlimit="10"
+            strokeWidth="1.139"
           />
         </g>
         <path

@@ -16,13 +16,15 @@ module.exports = {
       },
       spacing: {
         phone: "780px",
+        100: "28rem",
+        104: "32rem",
       },
       height: {
         100: "28rem",
         104: "32rem",
       },
       width: {
-        xlfull: "200%",
+        slider: "114rem",
       },
       maxWidth: {
         "7xl": "76rem",
@@ -35,6 +37,16 @@ module.exports = {
       },
       minHeight: {
         phone: "840px",
+      },
+      borderRadius: {
+        half: "360px",
+        big: "100px",
+      },
+      translate: {
+        "1/5": "20%",
+        "2/5": "40%",
+        "3/5": "60%",
+        "4/5": "80%",
       },
     },
   },
