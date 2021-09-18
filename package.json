@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.2.0",
-    "@heroicons/react": "^1.0.1",
+    "@heroicons/react": "^1.0.4",
     "@tailwindcss/forms": "^0.3.2",
+    "axios": "^0.21.4",
     "moment": "^2.29.1",
     "mongoose": "^5.12.12",
     "next": "10.2.3",
@@ -18,7 +19,8 @@
     "react-dom": "17.0.2",
     "react-google-charts": "^3.0.15",
     "react-id-swiper": "^4.0.0",
-    "react-moment": "^1.1.1"
+    "react-moment": "^1.1.1",
+    "react-swipeable": "^6.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",

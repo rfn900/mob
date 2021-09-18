@@ -3,10 +3,10 @@ import HeroBlobSVGMobile from "./HeroBlobSVGMobile";
 import HeroSvg from "./HeroSvg";
 function Hero() {
   return (
-    <div className="relative flex items-center justify-center max-h-full py-24 xl:h-screen">
-      <HeroBlobSVGMobile className="md:hidden" />
-      <HeroBlobSVG className="hidden md:block" />
-      <div className="relative flex flex-col w-full max-w-6xl mt-12 xl:flex-row">
+    <div className="items-center justify-center clip-path-hero section-full">
+      <HeroBlobSVGMobile />
+      <HeroBlobSVG />
+      <div className="relative flex flex-col items-start w-full max-w-6xl mt-12 xl:mt-24 lg:flex-row">
         <div className="relative flex flex-col p-6 opacity-0 md:p-12 xl:p-0 animate-load">
           <p className="mb-1 text-sm text-gray-600">Content Marketing Agency</p>
           <h1 className="mt-1 font-sans text-3xl font-bold sm:text-5xl 2xl:text-6xl">
@@ -20,8 +20,8 @@ function Hero() {
               <span className="absolute bottom-0 z-0 w-11/12 bg-yellow-300 h-3/5 top-3 md:top-4 left-5"></span>
             </div>
           </h4>
-          <button className="w-40 mt-8 lg:mt-12 md:mt-8 btn-indigo">
-            Read More
+          <button className="py-3 mt-8 w-60 lg:mt-12 md:mt-8 btn-primary">
+            Become an Advertiser
           </button>
         </div>
         <HeroSvg />
