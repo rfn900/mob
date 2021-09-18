@@ -7,10 +7,10 @@ import {
   InboxIcon,
   UsersIcon,
 } from "@heroicons/react/outline";
-import SidebarMobile from "../components/SidebarMobile";
-import SidebarDesktop from "../components/SidebarDesktop";
-import DashboardHeader from "../components/DashboardHeader";
-import DashboardBody from "../components/DashboardBody";
+import SidebarMobile from "../components/dashboard/SidebarMobile";
+import SidebarDesktop from "../components/dashboard/SidebarDesktop";
+import DashboardHeader from "../components/dashboard/DashboardHeader";
+import DashboardBody from "../components/dashboard/DashboardBody";
 import dbConnect, { jsonify } from "../middleware/mongodb";
 import Commissions from "../models/commissions";
 import moment from "moment";

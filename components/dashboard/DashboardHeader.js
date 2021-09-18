@@ -1,6 +1,6 @@
 import { MenuAlt2Icon, BellIcon } from "@heroicons/react/outline";
 import { SearchIcon } from "@heroicons/react/solid";
-import ProfileDropdown from "../components/ProfileDropdown";
+import ProfileDropdown from "./ProfileDropdown";
 
 export default function DashboardHeader({ userNavigation, setSidebarOpen }) {
   return (

@@ -8,10 +8,10 @@ import {
   calculateTotalRevenue,
   currencyFormatter,
   dataIntervals,
-} from "../utils/dataFunctions";
+} from "../../utils/dataFunctions";
 import Swiper from "react-id-swiper";
 import RevSwiper from "./RevSwiper";
-import RocketSVG from "./RocketSVG";
+import RocketSVG from "../svgs/RocketSVG";
 
 export default function DashboardBody({ data, stats }) {
   const yearToDateInterval = dataIntervals(data.length).yearToDate;
