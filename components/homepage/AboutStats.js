@@ -12,21 +12,25 @@ export default function AboutStats() {
           <h3 className="mt-6 font-sans text-5xl font-black text-indigo-600">
             1M+
           </h3>
-          <p className="mt-2 font-sans text-lg text-gray-600">People Reached</p>
+          <p className="mt-2 text-center font-sans text-lg text-gray-600">
+            People Reached
+          </p>
         </div>
         <div className="flex flex-col items-center p-4 ">
           <ShoppingCartIcon className="w-20 h-20 p-4 text-indigo-600 rounded-full shadow-sm bg-indigo-50" />
           <h3 className="mt-6 font-sans text-5xl font-black text-indigo-600">
             20K+
           </h3>
-          <p className="mt-2 font-sans text-lg text-gray-600">Products Sold</p>
+          <p className="mt-2 text-center font-sans text-lg text-gray-600">
+            Products Sold
+          </p>
         </div>
         <div className="flex flex-col items-center p-4 ">
           <ThumbUpIcon className="w-20 h-20 p-4 text-indigo-600 rounded-full shadow-sm bg-indigo-50" />
           <h3 className="mt-6 font-sans text-5xl font-black text-indigo-600">
             100+
           </h3>
-          <p className="mt-2 font-sans text-lg text-gray-600">
+          <p className="mt-2 text-center font-sans text-lg text-gray-600">
             Happy Advertisers
           </p>
         </div>
@@ -35,7 +39,7 @@ export default function AboutStats() {
           <h3 className="mt-6 font-sans text-5xl font-black text-indigo-600">
             8
           </h3>
-          <p className="mt-2 font-sans text-lg text-gray-600">
+          <p className="mt-2 text-center font-sans text-lg text-gray-600">
             Online Properties
           </p>
         </div>
