@@ -1,6 +1,6 @@
-import HeroBlobSVG from "./HeroBlobSVG";
-import HeroBlobSVGMobile from "./HeroBlobSVGMobile";
-import HeroSvg from "./HeroSvg";
+import HeroBlobSVG from "../svgs/HeroBlobSVG";
+import HeroBlobSVGMobile from "../svgs/HeroBlobSVGMobile";
+import HeroSvg from "../svgs/HeroSvg";
 function Hero() {
   return (
     <div className="items-center justify-center clip-path-hero section-full">

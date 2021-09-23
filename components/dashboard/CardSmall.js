@@ -1,5 +1,5 @@
 import { ArrowSmUpIcon, ArrowSmDownIcon } from "@heroicons/react/solid";
-import { currencyFormatter } from "../utils/dataFunctions";
+import { currencyFormatter } from "../../utils/dataFunctions";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

@@ -41,6 +41,7 @@ module.exports = {
       borderRadius: {
         half: "360px",
         big: "100px",
+        medium: "50px",
       },
       translate: {
         "1/5": "20%",

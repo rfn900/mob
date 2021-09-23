@@ -1,5 +1,5 @@
-import ClipPathSVGBot from "./ClipPathSVGBot";
-import ClipPathSVGTop from "./ClipPathSVGTop";
+import ClipPathSVGBot from "../svgs/ClipPathSVGBot";
+import ClipPathSVGTop from "../svgs/ClipPathSVGTop";
 
 export default function Brands() {
   return (

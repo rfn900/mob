@@ -28,10 +28,10 @@
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 font-bold text-white bg-indigo-700 rounded-full shadow-md focus:outline-none transition hover:bg-indigo-600;
+    @apply px-4 py-2 font-bold text-white bg-indigo-700 rounded-full shadow-md transition hover:bg-indigo-600;
   }
   .btn-secondary {
-    @apply px-4 py-2 font-bold text-indigo-700 bg-transparent border-2 border-indigo-700 rounded-full transition shadow-md focus:outline-none hover:bg-indigo-600 hover:text-white;
+    @apply px-4 py-2 font-bold text-indigo-700 bg-transparent border-2 border-indigo-700 rounded-full transition shadow-md hover:bg-indigo-600 hover:text-white;
   }
   .section-full {
     @apply relative flex max-h-full py-24 overflow-hidden lg:h-screen;
@@ -54,4 +54,15 @@
     opacity: 1;
     transform: translateY(-10%);
   }
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #3730a3;
+  background: #fcd34d;
+}
+
+::selection {
+  color: #3730a3;
+  background: #fcd34d;
 }
