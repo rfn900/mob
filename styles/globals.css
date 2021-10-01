@@ -58,11 +58,11 @@
 
 ::-moz-selection {
   /* Code for Firefox */
-  color: #3730a3;
+  color: #313131;
   background: #fcd34d;
 }
 
 ::selection {
-  color: #3730a3;
+  color: #313131;
   background: #fcd34d;
 }

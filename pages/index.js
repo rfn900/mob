@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <title>MARSian Oline Group</title>
         <meta name="description" content="Homepage for MARSian Online Group" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/MOG_logo.png" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.css"
