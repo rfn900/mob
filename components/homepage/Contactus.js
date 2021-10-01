@@ -1,14 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
+import { formValidateMessage } from "../../utils/formValidates";
 
 const SubmitMessage = ({ status }) => {
-  const { validPayload, message } = status;
+  const { validPayload, validateMessage } = status;
   let colors = validPayload
     ? "text-green-900 bg-green-100"
     : "text-red-800 bg-red-100";
   return (
     <p className={` w-full lg:w-3/4 p-4 mt-8 ${colors} rounded-lg`}>
-      {message}
+      {validateMessage}
     </p>
   );
 };
@@ -17,59 +18,30 @@ export default function Contactus() {
   const [formFields, setFormFields] = useState({});
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  const formValidates = (fields) => {
-    if (typeof fields.email == "undefined" || fields.email === "") {
-      setSubmitStatus({
-        validPayload: false,
-        message: "Email field is required",
-      });
-      return false;
-    }
-
-    if (typeof fields.message == "undefined" || fields.message === "") {
-      setSubmitStatus({
-        validPayload: false,
-        message: "Message field is required",
-      });
-      return false;
-    }
-
-    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(fields.email)) {
-      setSubmitStatus({
-        validPayload: false,
-        message: "Email not valid",
-      });
-      return false;
-    }
-
-    if ((fields.name + fields.email + fields.message).split("").length > 1024) {
-      setSubmitStatus({
-        validPayload: false,
-        message: "Exceeded the max number of characters",
-      });
-      return false;
-    }
-    return true;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formValidates(formFields)) {
+    const validateMessage = formValidateMessage(formFields);
+    if (validateMessage === "validated") {
       try {
+        await axios.post("/api/contacts", formFields);
+
         setSubmitStatus({
           validPayload: true,
-          message: "Thanks for contacting us. Your message was delivered",
+          validateMessage:
+            "Thanks for contacting us. Your message was delivered",
         });
-        const res = await axios.post("/api/contacts", formFields);
-        console.log(res.data);
       } catch (e) {
         setSubmitStatus({
           validPayload: false,
-          message: "Sorry. Something went wrong!",
+          validateMessage: "Sorry. Something went wrong!",
         });
         console.log(e);
       }
-    }
+    } else
+      setSubmitStatus({
+        validPayload: false,
+        validateMessage,
+      });
   };
 
   const handleChange = (value, type) => {
