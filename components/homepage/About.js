@@ -6,7 +6,7 @@ import { PlusCircleIcon } from "@heroicons/react/outline";
 
 export default function About() {
   return (
-    <div className="relative z-0 flex-col items-start h-full section-full">
+    <div className="relative z-10 flex-col items-start h-full section-full">
       <div className="relative z-0 px-4 m-auto mt-12 text-center">
         <p className="text-xl font-bold text-indigo-600">Niched Content</p>
         <h2 className="mt-4 font-sans text-4xl font-bold md:text-6xl">
@@ -21,7 +21,7 @@ export default function About() {
         <div className="absolute bottom-0 z-0 w-104 top-10 lg:top-48 bg-indigo-100 h-1/3 lg:h-1/2 lg:w-full -right-1/2 lg:-left-1/2 rounded-half "></div>
         <div className="relative flex items-center justify-end flex-1 w-full p-4 lg:-12 lg:w-1/2">
           <img
-            className="relative w-full h-full drop-shadow-2xl lg:w-2/3"
+            className="relative w-full h-full drop-shadow-2xl max-w-lg lg:w-2/3"
             src="/niche-examples.png"
             alt="niche examples"
           />

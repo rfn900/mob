@@ -20,7 +20,7 @@ function CardAudience() {
         />
       </div>
       <h3 className="mt-8 font-mono text-2xl font-semibold">Audiences</h3>
-      <span class="bg-indigo-100 h-px w-full mt-4"></span>
+      <span className="bg-indigo-100 h-px w-full mt-4"></span>
       <ul className="w-full py-4 space-y-1">
         <li className="flex justify-between px-4 py-2 bg-gray-50">
           <span className="font-bold">Blogs</span>

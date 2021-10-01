@@ -34,7 +34,7 @@ const RevSwiper = ({ thisYearRevenue, yearToDateRevenue, lastYearRevenue }) => {
         </div>
       </Swiper>
       <div className="flex justify-center w-40 md:px-4 lg:w-96 space-x-2">
-        <button classname="" onClick={goPrev}>
+        <button className="" onClick={goPrev}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6"

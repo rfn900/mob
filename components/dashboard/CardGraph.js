@@ -29,11 +29,11 @@ function CardGraph({
       <div className="flex items-center w-auto mt-8 text-xs justify-evenly md:text-base">
         <span
           className={`px-4 rounded-l-full cursor-pointer 
-                              ${
-                                timeWindowMin === yearToDateInterval[0]
-                                  ? "bg-indigo-600 text-indigo-50"
-                                  : "bg-indigo-50 text-indigo-600"
-                              }`}
+          ${
+            timeWindowMin === yearToDateInterval[0]
+              ? "bg-indigo-600 text-indigo-50"
+              : "bg-indigo-50 text-indigo-600"
+          }`}
           onClick={() => {
             setTimeWindowMin(yearToDateInterval[0]);
             setTimeWindowMax(yearToDateInterval[1]);
