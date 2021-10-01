@@ -1,6 +1,7 @@
 import HeroBlobSVG from "../svgs/HeroBlobSVG";
 import HeroBlobSVGMobile from "../svgs/HeroBlobSVGMobile";
 import HeroSvg from "../svgs/HeroSvg";
+import { AppButton } from "./AppButton";
 function Hero() {
   return (
     <div className="items-center justify-center clip-path-hero section-full">
@@ -20,9 +21,11 @@ function Hero() {
               <span className="absolute bottom-0 z-0 w-11/12 bg-yellow-300 h-3/5 top-3 md:top-4 left-5"></span>
             </div>
           </h4>
-          <button className="py-3 mt-8 w-60 lg:mt-12 md:mt-8 btn-primary">
-            Become an Advertiser
-          </button>
+          <AppButton
+            text="Become an Advertiser"
+            btnType="btn-primary"
+            className="py-3 mt-8 w-60 lg:mt-12 md:mt-8"
+          />
         </div>
         <HeroSvg />
       </div>
