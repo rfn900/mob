@@ -3,6 +3,7 @@ import { HomeIcon } from "@heroicons/react/outline";
 import { TrendingUpIcon } from "@heroicons/react/outline";
 import { ShoppingBagIcon } from "@heroicons/react/outline";
 import { PlusCircleIcon } from "@heroicons/react/outline";
+import Highlight from "../layouts/Highlight";
 
 export default function About() {
   return (
@@ -13,8 +14,7 @@ export default function About() {
           Our Verticals
         </h2>
         <p className="relative mt-4 text-xl md:text-3xl leading-10">
-          <span className="relative z-10">Categories we work with</span>
-          <span className="absolute z-0 w-4/5 bg-yellow-300 right-2 h-1/2 md:right-20 top-5"></span>
+          <Highlight>Categories we work with</Highlight>
         </p>
       </div>
       <div className="relative flex flex-col items-center w-full h-full overflow-hidden lg:flex-row">

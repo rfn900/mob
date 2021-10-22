@@ -16,10 +16,7 @@ function Hero() {
           <h4 className="relative z-0 mt-4 text-lg font-bold sm:text-2xl md:mt-8 lg:mt-8">
             We take care of the content.
             <br className="" />
-            <div className="relative inline">
-              <span className="relative z-10">You make the sale.</span>
-              <span className="absolute bottom-0 z-0 w-11/12 bg-yellow-300 h-3/5 top-3 md:top-4 left-5"></span>
-            </div>
+            <Highlight>You make the sale.</Highlight>
           </h4>
           <AppButton
             text="Become an Advertiser"

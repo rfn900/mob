@@ -1,3 +1,4 @@
+import Highlight from "../layouts/Highlight";
 import ClipPathSVGBot from "../svgs/ClipPathSVGBot";
 import ClipPathSVGTop from "../svgs/ClipPathSVGTop";
 
@@ -9,8 +10,7 @@ export default function Brands() {
         className="absolute bottom-full lg:bottom-3/4"
       />
       <h2 className="relative z-10 w-full m-auto font-sans text-4xl font-bold text-center lg:w-96">
-        <span className="relative z-10">Colaborations</span>
-        <span className="absolute w-64 bg-yellow-300 right-1/4 h-1/2 top-6"></span>
+        <Highlight>Colaborations</Highlight>
       </h2>
       <div className="relative z-10 flex items-center justify-around max-w-6xl px-4 m-auto mt-4 space-x-2 lg:space-x-8 sm:px-8 lg:px-24">
         <div className="flex-1">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { SearchCircleIcon } from "@heroicons/react/outline";
 import { PresentationChartBarIcon } from "@heroicons/react/outline";
 import { PencilAltIcon } from "@heroicons/react/outline";
@@ -6,6 +6,7 @@ import { ZoomInIcon } from "@heroicons/react/outline";
 import { ChatIcon } from "@heroicons/react/outline";
 import { ClipboardCheckIcon } from "@heroicons/react/outline";
 import { useSwipeable } from "react-swipeable";
+import Highlight from "../layouts/Highlight";
 
 export default function Carousel() {
   const [whichSlider, setWhichSlider] = useState(1);
@@ -22,7 +23,6 @@ export default function Carousel() {
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
   });
-  useEffect(() => {});
 
   return (
     <div className="flex-col items-start section-full">
@@ -34,8 +34,7 @@ export default function Carousel() {
             What We Do
           </h2>
           <p className="relative mt-4 text-xl md:text-3xl leading-10">
-            <span className="relative z-10">We turn traffic into sales</span>
-            <span className="absolute z-0 w-4/5 bg-yellow-300 right-2 h-1/2 md:right-20 top-5"></span>
+            <Highlight>We turn traffic into sales</Highlight>
           </p>
         </div>
         <div

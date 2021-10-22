@@ -2,6 +2,7 @@ import { MailIcon } from "@heroicons/react/outline";
 import { PhoneIcon } from "@heroicons/react/outline";
 
 import { FacebookSVG, InstagramSVG, LinkedInSVG } from "../svgs/socialSVGs";
+import Highlight from "../layouts/Highlight";
 export default function Footer() {
   return (
     <div className="relative z-0 bg-gradient-to-tr from-indigo-100 to-indigo-50 mt-12 lg:mt-0 shadow-xl p-8 py-12 md:p-24 rounded-t-medium md:rounded-t-big">
@@ -31,6 +32,8 @@ export default function Footer() {
           <h3 className="relative z-10 font-mono text-xl text-gray-700 font-bold">
             <span className="relative z-10">Links</span>
             <span className="bg-yellow-300 absolute w-16 h-3 bottom-0 left-0"></span>
+          <h3 className="z-10 font-mono text-xl text-gray-700 font-bold">
+            <Highlight>Links</Highlight>
           </h3>
 
           <div className="flex flex-col gap-4 mt-4 underline">
@@ -50,8 +53,7 @@ export default function Footer() {
         </div>
         <div className="w-full lg:w-1/4 text-gray-600 ">
           <h3 className="relative z-10 font-mono text-xl w-auto text-gray-700 font-bold">
-            <span className="relative z-10">Contact</span>
-            <span className="bg-yellow-300 absolute w-20 h-3 bottom-0 left-0"></span>
+            <Highlight>Contact</Highlight>
           </h3>
           <div className="flex flex-col gap-4 mt-4">
             <div className="flex gap-2 items-center">
