@@ -5,7 +5,7 @@ import AboutStats from "../components/homepage/AboutStats";
 import Carousel from "../components/homepage/Carousel";
 import About from "../components/homepage/About";
 import Brands from "../components/homepage/Brands";
-import Contactus from "../components/homepage/Contactus";
+import ContactusSection from "../components/homepage/ContactusSection";
 import Footer from "../components/homepage/Footer";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
       <Carousel />
       <About />
       <Brands />
-      <Contactus />
+      <ContactusSection />
       <Footer />
     </div>
   );

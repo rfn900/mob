@@ -1,3 +1,4 @@
+import Highlight from "../layouts/Highlight";
 import HeroBlobSVG from "../svgs/HeroBlobSVG";
 import HeroBlobSVGMobile from "../svgs/HeroBlobSVGMobile";
 import HeroSvg from "../svgs/HeroSvg";
@@ -10,7 +11,7 @@ function Hero() {
       <div className="relative flex flex-col items-start w-full max-w-6xl mt-12 xl:mt-24 lg:flex-row">
         <div className="relative flex flex-col p-6 opacity-0 md:p-12 xl:p-0 animate-load">
           <p className="mb-1 text-sm text-gray-600">Content Marketing Agency</p>
-          <h1 className="mt-1 font-sans text-3xl font-bold sm:text-5xl 2xl:text-6xl">
+          <h1 className="mt-1 font-sans text-3xl font-extrabold sm:text-5xl 2xl:text-6xl">
             MARSian Online Group
           </h1>
           <h4 className="relative z-0 mt-4 text-lg font-bold sm:text-2xl md:mt-8 lg:mt-8">

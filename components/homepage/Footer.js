@@ -1,5 +1,9 @@
 import { MailIcon } from "@heroicons/react/outline";
 import { PhoneIcon } from "@heroicons/react/outline";
+import { RiFacebookFill } from "react-icons/ri";
+import { FiInstagram } from "react-icons/fi";
+import { RiLinkedinBoxLine } from "react-icons/ri";
+import Link from "next/link";
 
 import { FacebookSVG, InstagramSVG, LinkedInSVG } from "../svgs/socialSVGs";
 import Highlight from "../layouts/Highlight";
@@ -15,23 +19,21 @@ export default function Footer() {
           </p>
           <div className="mt-8 flex gap-4 items-end">
             <div className="relative z-10">
-              <FacebookSVG stroke="#1F2937" className="relative z-10" />
-              <span className="h-6 w-8 z-0 bg-yellow-100 absolute bottom-1 right-0 rounded-full transform rotate-12 rounded-lg"></span>
+              <RiFacebookFill className="h-8 w-8 relative z-10 text-gray-700" />
+              <span className="h-6 w-8 z-0 bg-yellow-100 absolute bottom-1 right-1 rounded-full transform rotate-12 rounded-lg"></span>
             </div>
             <div className="relative z-10">
-              <LinkedInSVG stroke="#1F2937" className="relative z-10" />
-              <span className="h-6 w-8 z-0 bg-yellow-100 absolute bottom-1 right-0 rounded-full transform rotate-12 rounded-lg"></span>
+              <RiLinkedinBoxLine className="h-8 w-8 relative z-10 text-gray-700" />
+
+              <span className="h-6 w-8 z-0 bg-yellow-100 absolute bottom-1 right-1 rounded-full transform rotate-12 rounded-lg"></span>
             </div>
             <div className="relative z-10">
-              <InstagramSVG stroke="#1F2937" className="relative z-10" />
-              <span className="h-6 w-8 z-0 bg-yellow-100 absolute bottom-1 right-0 rounded-full transform rotate-12 rounded-lg"></span>
+              <FiInstagram className="h-8 w-7 relative z-10 text-gray-700" />
+              <span className="h-6 w-8 z-0 bg-yellow-100 absolute bottom-1 right-1 rounded-full transform rotate-12 rounded-lg"></span>
             </div>
           </div>
         </div>
         <div className="w-full lg:w-1/4 text-gray-600">
-          <h3 className="relative z-10 font-mono text-xl text-gray-700 font-bold">
-            <span className="relative z-10">Links</span>
-            <span className="bg-yellow-300 absolute w-16 h-3 bottom-0 left-0"></span>
           <h3 className="z-10 font-mono text-xl text-gray-700 font-bold">
             <Highlight>Links</Highlight>
           </h3>
