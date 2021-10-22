@@ -24,18 +24,16 @@ function Nav() {
       }`}
     >
       <div className="flex items-center justify-between w-full max-w-6xl">
-        <a href="/">
           <img src="/MOG_Logo_vr2_DIY.png" alt="logo" className="h-10" />
-        </a>
         <div className="justify-around hidden m-auto text-lg font-thin w-96 lg:flex">
           <div className="min-w-max">
-            <a href="">Case Study</a>
+            <Link href="">Case Study</Link>
           </div>
           <div className="min-w-max">
-            <a href="">About Us</a>
+            <Link href="">About Us</Link>
           </div>
           <div className="min-w-max">
-            <a href="/dashboard">Admin</a>
+            <Link href="/dashboard">Admin</Link>
           </div>
         </div>
         <div className="hidden lg:flex">

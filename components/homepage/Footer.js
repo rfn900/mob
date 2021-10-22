@@ -35,16 +35,16 @@ export default function Footer() {
 
           <div className="flex flex-col gap-4 mt-4 underline">
             <div>
-              <a href="/dashboard">Work With Us</a>
+              <Link href="/dashboard">Work With Us</Link>
             </div>
             <div>
-              <a href="/dashboard">The Team</a>
+              <Link href="/dashboard">The Team</Link>
             </div>
             <div>
-              <a href="/dashboard">Case Study</a>
+              <Link href="/dashboard">Case Study</Link>
             </div>
             <div>
-              <a href="/dashboard">Admin</a>
+              <Link href="/dashboard">Admin</Link>
             </div>
           </div>
         </div>
