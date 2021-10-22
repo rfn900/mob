@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { formValidateMessage } from "../../utils/formValidates";
+import Highlight from "../layouts/Highlight";
 
 const SubmitMessage = ({ status }) => {
   const { validPayload, validateMessage } = status;
@@ -14,7 +15,7 @@ const SubmitMessage = ({ status }) => {
   );
 };
 
-export default function Contactus() {
+export default function ContactusSection() {
   const [formFields, setFormFields] = useState({});
   const [submitStatus, setSubmitStatus] = useState(null);
 
@@ -242,10 +243,7 @@ export default function Contactus() {
         <div className="flex-1 p-8">
           <h3 className="relative z-0 text-2xl font-bold lg:text-4xl">
             Want to reach 1 million people?
-            <span className="relative">
-              <span className="relative z-10"> Contact Us</span>
-              <span className="absolute bottom-0 w-full h-4 bg-yellow-300 left-5 lg:h-5" />
-            </span>
+            <Highlight> Contact Us</Highlight>
           </h3>
           <form
             onSubmit={handleSubmit}
