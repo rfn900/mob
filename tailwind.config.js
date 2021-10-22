@@ -1,9 +1,14 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
-  //mode: "jit",
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        "warm-gray": colors.warmGray,
+        teal: colors.teal,
+      },
       fontFamily: {
         sans: ["Open Sans"],
         serif: ["Roboto Slab"],
@@ -50,8 +55,8 @@ module.exports = {
         "4/5": "80%",
       },
       rotate: {
-        "-37": "-41.41deg",
-        37: "41.41deg",
+        "-37": "-35deg",
+        37: "35deg",
       },
     },
   },
