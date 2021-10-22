@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import AnimatedMenuIcon from "./AnimatedMenuIcon";
 import { AppButton } from "./AppButton";
 import MobileNav from "./MobileNav";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 80 ? setScrolled(true) : setScrolled(false);
@@ -24,7 +26,9 @@ function Nav() {
       }`}
     >
       <div className="flex items-center justify-between w-full max-w-6xl">
+        <Link href="/">
           <img src="/MOG_Logo_vr2_DIY.png" alt="logo" className="h-10" />
+        </Link>
         <div className="justify-around hidden m-auto text-lg font-thin w-96 lg:flex">
           <div className="min-w-max">
             <Link href="">Case Study</Link>
@@ -37,12 +41,16 @@ function Nav() {
           </div>
         </div>
         <div className="hidden lg:flex">
-          <AppButton text="Contact Us" btnType="btn-secondary" />
+          <AppButton
+            text="Contact Us"
+            btnType="btn-secondary"
+            action={() => router.push("/contactus")}
+          />
         </div>
         <AnimatedMenuIcon
           onClick={() => setMenuOpen(!menuOpen)}
           menuOpen={menuOpen}
-          className="relative z-50 flex justify-between flex-col w-8 h-6 cursor-pointer text-myblue lg:hidden"
+          className="relative z-50 flex justify-between flex-col w-8 h-5 cursor-pointer text-myblue lg:hidden"
         />
       </div>
       <div
