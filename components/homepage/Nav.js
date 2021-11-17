@@ -25,7 +25,7 @@ function Nav() {
         scrolled ? "bg-white bgopacity-95" : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between w-full max-w-6xl">
+      <div className="flex cursor-pointer items-center justify-between w-full max-w-6xl">
         <Link href="/">
           <img src="/MOG_Logo_vr2_DIY.png" alt="logo" className="h-10" />
         </Link>
@@ -50,7 +50,7 @@ function Nav() {
         <AnimatedMenuIcon
           onClick={() => setMenuOpen(!menuOpen)}
           menuOpen={menuOpen}
-          className="relative z-50 flex justify-between flex-col w-8 h-5 cursor-pointer text-myblue lg:hidden"
+          className="relative z-50 flex items-center justify-start w-8 h-8 cursor-pointer text-myblue lg:hidden"
         />
       </div>
       <div

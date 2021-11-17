@@ -2,24 +2,18 @@ export default function AnimatedMenuIcon({ className, onClick, menuOpen }) {
   return (
     <div onClick={onClick} className={className}>
       <div
-        className={`w-8 h-0.5 bg-indigo-900 rounded ${
-          menuOpen
-            ? "transform -rotate-37 transition duration-500 origin-top-right"
-            : "transform rotate-0 transition duration-500 origin-top-right"
+        className={`absolute transform w-8 h-0.5 bg-indigo-900 transition duration-500 origin-center rounded ${
+          menuOpen ? "translate-y-0 -rotate-45" : "-translate-y-2.5"
         }`}
       ></div>
       <div
-        className={`w-5 h-0.5 bg-indigo-900 rounded ${
-          menuOpen
-            ? "transform opacity-0 transition duration-500"
-            : "transform opacity-100 transition duration-500"
+        className={`w-6 h-0.5 bg-indigo-900 rounded transform transition duration-500 ${
+          menuOpen ? "opacity-0" : "opacity-100"
         }`}
       ></div>
       <div
-        className={`w-8 h-0.5 bg-indigo-900 rounded ${
-          menuOpen
-            ? "transform rotate-37 transition duration-500 origin-bottom-right"
-            : "transform rotate-0 transition duration-500 origin-bottom-right"
+        className={`absolute transform w-8 h-0.5 bg-indigo-900 transition duration-500 origin-center rounded ${
+          menuOpen ? "translate-y-0 rotate-45" : "translate-y-2.5"
         }`}
       ></div>
     </div>

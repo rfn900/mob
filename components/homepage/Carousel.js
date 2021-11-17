@@ -75,7 +75,7 @@ export default function Carousel() {
               </p>
             </div>
             <p className="py-4 text-gray-500">
-              Get new customers by the door, seemless, everyday with the best
+              Get new customers by the door, seemlessly, everyday with the best
               ROI.
             </p>
           </div>

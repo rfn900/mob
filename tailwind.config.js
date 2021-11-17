@@ -49,6 +49,8 @@ module.exports = {
         medium: "50px",
       },
       translate: {
+        "10px": "10px",
+        "-10px": "-10px",
         "1/5": "20%",
         "2/5": "40%",
         "3/5": "60%",
