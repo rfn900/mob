@@ -11,10 +11,7 @@ import SidebarMobile from "../components/dashboard/SidebarMobile";
 import SidebarDesktop from "../components/dashboard/SidebarDesktop";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import DashboardBody from "../components/dashboard/DashboardBody";
-import dbConnect, { jsonify } from "../middleware/mongodb";
-import Commissions from "../models/commissions";
-import moment from "moment";
-import { calculateTotalRevenue } from "../utils/dataFunctions";
+import axios from "axios";
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: false },
@@ -60,61 +57,8 @@ export default function Dashboard({ commissions, stats }) {
 }
 
 export async function getServerSideProps() {
-  await dbConnect();
-  const dbRes = await Commissions.find();
-  const programNames = [];
-  const stats = [];
-  const data = dbRes.map((commissionObj, index) => {
-    const resultsArray = [];
-    const month = moment(commissionObj.date).format("MMM");
-    resultsArray.push(month);
-    let sum = 0;
-    commissionObj.results.forEach((result) => {
-      if (index === 0) programNames.push(result.program);
-      resultsArray.push(Number(result.value));
-      sum += Number(result.value);
-    });
-    resultsArray.push(sum);
-    return resultsArray;
-  });
-
-  for (let i = 0; i < 4; i++) {
-    let thisMonthValue = data[data.length - 1][i + 1];
-    let lastMonthValue = data[data.length - 2][i + 1];
-    let change = (100 * (thisMonthValue - lastMonthValue)) / lastMonthValue;
-    let truncateChange = Math.round(change * 100) / 100;
-
-    stats.push({
-      name: programNames[i],
-      stat: thisMonthValue,
-      change: truncateChange,
-      changeType: change > 0 ? "increase" : "decrease",
-      lastMonht: lastMonthValue,
-      //thisYear: getThisYearsCommission(data, i + 1),
-      thisYear: calculateTotalRevenue(data, "thisYear", i + 1),
-    });
-  }
-
-  if (!dbRes) {
-    return {
-      notFound: true,
-    };
-  }
+  const { data } = await axios.get("http://localhost:3000/api/commissions");
   return {
-    props: {
-      commissions: jsonify(data),
-      stats: stats,
-    },
+    props: data,
   };
-}
-
-function getThisYearsCommission(data, programIndex) {
-  const filteredData = data.filter(
-    (_, index) => index >= data.length - new Date().getMonth()
-  );
-  let sum = 0;
-  filteredData.forEach((value) => {
-    sum += value[programIndex];
-  });
-  return sum;
 }
