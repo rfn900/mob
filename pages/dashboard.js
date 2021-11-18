@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   CalendarIcon,
   ChartBarIcon,
@@ -7,11 +7,13 @@ import {
   InboxIcon,
   UsersIcon,
 } from "@heroicons/react/outline";
+import axios from "axios";
+import AuthContext from "../context/AuthContext";
 import SidebarMobile from "../components/dashboard/SidebarMobile";
 import SidebarDesktop from "../components/dashboard/SidebarDesktop";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import DashboardBody from "../components/dashboard/DashboardBody";
-import axios from "axios";
+import LoginForm from "../components/dashboard/LoginForm";
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: false },
@@ -28,10 +30,17 @@ const userNavigation = [
 ];
 
 export default function Dashboard({ commissions, stats }) {
+  const { user } = useContext(AuthContext);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [navItem, setNavItem] = useState(0);
   navigation[navItem].current = true;
-  console.log(stats);
+
+  if (!user)
+    return (
+      <div className="flex flex-col items-center h-screen justify-center ">
+        <LoginForm />
+      </div>
+    );
 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
@@ -48,9 +57,13 @@ export default function Dashboard({ commissions, stats }) {
           userNavigation={userNavigation}
           setSidebarOpen={setSidebarOpen}
         />
-        <main className="relative flex-1 overflow-y-auto focus:outline-none">
-          <DashboardBody data={commissions} stats={stats} />
-        </main>
+        {user ? (
+          <main className="relative flex-1 overflow-y-auto focus:outline-none">
+            <DashboardBody data={commissions} stats={stats} />
+          </main>
+        ) : (
+          <p>No Permission to see this</p>
+        )}
       </div>
     </div>
   );

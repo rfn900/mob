@@ -5,7 +5,6 @@ import { FiInstagram } from "react-icons/fi";
 import { RiLinkedinBoxLine } from "react-icons/ri";
 import Link from "next/link";
 
-import { FacebookSVG, InstagramSVG, LinkedInSVG } from "../svgs/socialSVGs";
 import Highlight from "../layouts/Highlight";
 export default function Footer() {
   return (
