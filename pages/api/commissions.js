@@ -2,9 +2,23 @@ import dbConnect, { jsonify } from "../../middleware/mongodb";
 import Commissions from "../../models/commissions";
 import { calculateTotalRevenue } from "../../utils/dataFunctions";
 import moment from "moment";
+import jwt from "jsonwebtoken";
+import User from "../../models/users";
+
+const validateCookie = async (cookie) => {
+  if (!cookie) return false;
+  const token = cookie.split("=")[1];
+  const { userId } = jwt.verify(token, process.env.JWT_SECRET);
+  try {
+    const user = await User.findOne({ _id: userId });
+    if (!user) return false;
+  } catch (e) {
+    return false;
+  }
+  return true;
+};
 
 const fetchCommissions = async () => {
-  await dbConnect();
   const dbRes = await Commissions.find();
   const programNames = [];
   const stats = [];
@@ -51,6 +65,13 @@ const fetchCommissions = async () => {
 };
 
 const handler = async (req, res) => {
+  await dbConnect();
+  const hasValidCookie = await validateCookie(req.headers.cookie);
+  if (!hasValidCookie) {
+    res.status(401).json({ msg: "Not authorized to see this resource" });
+    return;
+  }
+
   const data = await fetchCommissions();
   if (req.method === "GET") res.status(200).json(data);
   else

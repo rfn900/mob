@@ -1,15 +1,26 @@
-import User from "../../models/users";
 import dbConnect from "../../middleware/mongodb";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import cookie from "cookie";
+import User from "../../models/users";
 
-const generateToken = (userId) =>
-  jwt.sign({ userId }, process.env.JWT_SECRET, {
+const generateToken = (user) =>
+  jwt.sign({ userId: user._id, email: user.email }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
 const createAndSendToken = (user, statusCode, req, res) => {
-  const token = generateToken(user._id);
+  const token = generateToken(user);
+  res.setHeader(
+    "Set-Cookie",
+    cookie.serialize("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV !== "development",
+      maxAge: 60 * 60 * 24 * 7, // One week
+      sameSite: "strict",
+      path: "/",
+    })
+  );
   res.statusCode = statusCode;
   res.json({
     status: "success",

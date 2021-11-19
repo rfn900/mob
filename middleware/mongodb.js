@@ -17,6 +17,10 @@ async function dbConnect() {
 
 export default dbConnect;
 
+export function dbCloseConnection() {
+  mongoose.connection.close();
+}
+
 export function jsonify(obj) {
   return JSON.parse(JSON.stringify(obj));
 }

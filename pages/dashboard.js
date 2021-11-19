@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import {
   CalendarIcon,
   ChartBarIcon,
@@ -8,12 +8,12 @@ import {
   UsersIcon,
 } from "@heroicons/react/outline";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 import AuthContext from "../context/AuthContext";
 import SidebarMobile from "../components/dashboard/SidebarMobile";
 import SidebarDesktop from "../components/dashboard/SidebarDesktop";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import DashboardBody from "../components/dashboard/DashboardBody";
-import LoginForm from "../components/dashboard/LoginForm";
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: false },
@@ -29,18 +29,20 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ];
 
-export default function Dashboard({ commissions, stats }) {
-  const { user } = useContext(AuthContext);
+export default function Dashboard({ data, cookie }) {
+  const { commissions, stats } = data;
+  const { user, setUser } = useContext(AuthContext);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [navItem, setNavItem] = useState(0);
   navigation[navItem].current = true;
 
-  if (!user)
-    return (
-      <div className="flex flex-col items-center h-screen justify-center ">
-        <LoginForm />
-      </div>
-    );
+  useEffect(() => {
+    const decoded = jwt_decode(cookie.split("=")[1]);
+    setUser({
+      userId: decoded.userId,
+      email: decoded.email,
+    });
+  }, []);
 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
@@ -65,9 +67,33 @@ export default function Dashboard({ commissions, stats }) {
   );
 }
 
-export async function getServerSideProps() {
-  const { data } = await axios.get(`${process.env.SERVER_URL}/api/commissions`);
-  return {
-    props: data,
+export async function getServerSideProps({ req }) {
+  const cookie = req?.headers.cookie;
+
+  const config = {
+    headers: {
+      cookie: typeof cookie !== "undefined" ? cookie : "",
+    },
   };
+  try {
+    const { data } = await axios.get(
+      `${process.env.SERVER_URL}/api/commissions`,
+      config
+    );
+    return {
+      props: {
+        data,
+        cookie,
+      },
+    };
+  } catch (e) {
+    if (e.response.status === 401) {
+      return {
+        redirect: {
+          destination: "/login",
+          permanent: false,
+        },
+      };
+    }
+  }
 }
