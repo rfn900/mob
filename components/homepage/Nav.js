@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
-import AnimatedMenuIcon from "./AnimatedMenuIcon";
+import Link from "next/link";
+import { scroller } from "react-scroll";
 import { AppButton } from "./AppButton";
 import MobileNav from "./MobileNav";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import AnimatedMenuIcon from "./AnimatedMenuIcon";
 
 function Nav() {
+  const scrollToContact = () =>
+    scroller.scrollTo("contact", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const router = useRouter();
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 80 ? setScrolled(true) : setScrolled(false);
@@ -44,7 +51,7 @@ function Nav() {
           <AppButton
             text="Contact Us"
             btnType="btn-secondary"
-            action={() => router.push("/contactus")}
+            action={() => scrollToContact()}
           />
         </div>
         <AnimatedMenuIcon
@@ -58,7 +65,7 @@ function Nav() {
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <MobileNav menuOpen={menuOpen} />
+        <MobileNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
     </div>
   );

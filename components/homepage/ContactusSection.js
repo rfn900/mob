@@ -24,8 +24,8 @@ export default function ContactusSection() {
     const validateMessage = formValidateMessage(formFields);
     if (validateMessage === "validated") {
       try {
-        await axios.post("/api/contacts", formFields);
-
+        const res = await axios.post("/api/hello", formFields);
+        console.log(res);
         setSubmitStatus({
           validPayload: true,
           validateMessage:
@@ -52,7 +52,7 @@ export default function ContactusSection() {
   };
 
   return (
-    <div className="relative m-auto mt-12 2xl:mt-48 max-w-8xl">
+    <div id="contact" className="relative m-auto mt-12 2xl:mt-48 max-w-8xl">
       <div className="flex flex-col items-center w-full lg:items-start lg:p-16 lg:flex-row lg:gap-8">
         <div className="flex-1 w-full">
           <svg
@@ -253,8 +253,9 @@ export default function ContactusSection() {
             <label htmlFor="name">
               Name:
               <input
-                onChange={(e) => handleChange(e.target.value, "name")}
+                onChange={(e) => handleChange(e.target.value, e.target.id)}
                 className="w-full border-0 rounded-md shadow-sm bg-indigo-50"
+                id="name"
                 name="name"
                 type="text"
               />
@@ -263,8 +264,9 @@ export default function ContactusSection() {
               Email:
               <input
                 required
-                onChange={(e) => handleChange(e.target.value, "email")}
+                onChange={(e) => handleChange(e.target.value, e.target.id)}
                 className="w-full border-0 rounded-md shadow-sm bg-indigo-50"
+                id="email"
                 name="email"
                 type="email"
               />
@@ -273,9 +275,9 @@ export default function ContactusSection() {
               Message:
               <textarea
                 required
-                onChange={(e) => handleChange(e.target.value, "message")}
+                onChange={(e) => handleChange(e.target.value, e.target.id)}
                 className="w-full border-0 rounded-md shadow-sm bg-indigo-50"
-                id=""
+                id="message"
                 name="message"
                 cols="20"
                 rows="5"

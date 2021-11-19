@@ -1,11 +1,17 @@
 import { AppButton } from "./AppButton";
-import { useRouter } from "next/router";
 import { RiFacebookFill } from "react-icons/ri";
 import { FiInstagram } from "react-icons/fi";
 import { RiLinkedinBoxLine } from "react-icons/ri";
-export default function MobileNav({ menuOpen }) {
+import { scroller } from "react-scroll";
+export default function MobileNav({ menuOpen, setMenuOpen }) {
   const opacityTransition = menuOpen ? "opacity-100" : "opacity-0";
-  const router = useRouter();
+  const scrollToContact = () =>
+    scroller.scrollTo("contact", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+
   return (
     <div
       className={`shadow-xl px-6 pt-4 pb-12 overflow-scroll h-full flex flex-col transition duration-500 ${opacityTransition}`}
@@ -30,7 +36,10 @@ export default function MobileNav({ menuOpen }) {
           text="Contact Us"
           btnType="btn-secondary"
           className="px-2 mt-4 w-1/2 mx-0"
-          action={() => router.push("/contactus")}
+          action={() => {
+            scrollToContact();
+            setMenuOpen(false);
+          }}
         />
       </div>
       <div className="mt-16 flex gap-8 w-full justify-center items-center">
