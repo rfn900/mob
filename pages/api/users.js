@@ -29,21 +29,18 @@ export default async (req, res) => {
       });
     }
     const user = await User.findOne({ email: email });
-    const passwordConfirms = await bcrypt.compare(password, user.password);
-    console.log(user, passwordConfirms);
-    if (!user || !passwordConfirms) {
+    const passwordConfirms = user
+      ? await bcrypt.compare(password, user.password)
+      : null;
+
+    if (!passwordConfirms) {
       return res.status(401).json({
         status: "error",
         message: "Incorrect email or password.",
       });
-    } else if (user && passwordConfirms) {
-      createAndSendToken(user, 200, req, res);
-    } else {
-      res.status(500).json({
-        status: "error",
-        message: "Something went terribly wrong ☠️",
-      });
     }
+
+    createAndSendToken(user, 200, req, res);
   } else {
     res.setHeader("Allow", ["POST"]);
     res.status(405).json({

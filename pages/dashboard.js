@@ -57,20 +57,16 @@ export default function Dashboard({ commissions, stats }) {
           userNavigation={userNavigation}
           setSidebarOpen={setSidebarOpen}
         />
-        {user ? (
-          <main className="relative flex-1 overflow-y-auto focus:outline-none">
-            <DashboardBody data={commissions} stats={stats} />
-          </main>
-        ) : (
-          <p>No Permission to see this</p>
-        )}
+        <main className="relative flex-1 overflow-y-auto focus:outline-none">
+          <DashboardBody data={commissions} stats={stats} />
+        </main>
       </div>
     </div>
   );
 }
 
 export async function getServerSideProps() {
-  const { data } = await axios.get("http://localhost:3000/api/commissions");
+  const { data } = await axios.get(`${process.env.SERVER_URL}/api/commissions`);
   return {
     props: data,
   };

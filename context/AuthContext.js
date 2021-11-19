@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import useRouter from "next/router";
+import { useRouter } from "next/router";
 import axios from "axios";
 
 const AuthContext = createContext();
@@ -7,7 +7,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
-
+  const router = useRouter();
   const register = async (user) => {
     console.log(user);
   };
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   const login = async ({ email, password }) => {
     try {
       setError(null);
-      const { data } = await axios.post("http://localhost:3000/api/users", {
+      const { data } = await axios.post("/api/users", {
         email,
         password,
       });
@@ -28,6 +28,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
+    router.replace("/");
+    setUser(null);
     console.log("logout");
   };
 

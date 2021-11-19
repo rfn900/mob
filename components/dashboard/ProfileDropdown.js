@@ -1,11 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import AuthContext from "../../context/AuthContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function ProfileDropdown({ userNavigation }) {
+  const { logout } = useContext(AuthContext);
   return (
     <Menu as="div" className="relative ml-3">
       {({ open }) => (
@@ -39,6 +41,11 @@ export default function ProfileDropdown({ userNavigation }) {
                   {({ active }) => (
                     <a
                       href={item.href}
+                      onClick={() => {
+                        if (item.name === "Sign out") {
+                          logout();
+                        }
+                      }}
                       className={classNames(
                         active ? "bg-gray-100" : "",
                         "block px-4 py-2 text-sm text-gray-700"
