@@ -31,7 +31,7 @@ const userNavigation = [
 
 export default function Dashboard({ data, cookie }) {
   const { commissions, stats } = data
-  const { user, setUser } = useContext(AuthContext)
+  const { setUser } = useContext(AuthContext)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [navItem, setNavItem] = useState(0)
   navigation[navItem].current = true
