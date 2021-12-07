@@ -1,35 +1,53 @@
-import LoginForm from "../components/dashboard/LoginForm";
-import axios from "axios";
+import LoginForm from '../components/dashboard/LoginForm'
+import Nav from '../components/homepage/Nav'
+import axios from 'axios'
 export default function Login() {
   return (
-    <div className="flex flex-col items-center h-screen justify-center ">
-      <LoginForm />
+    <div className="w-screen overflow-hidden">
+      <Nav />
+      <div className="flex flex-col items-center h-screen justify-center ">
+        <LoginForm />
+      </div>
     </div>
-  );
+  )
 }
 
 export async function getServerSideProps({ req }) {
-  const cookie = req?.headers.cookie;
+  const cookie = req?.headers.cookie ?? null
+
+  if (!cookie) {
+    return {
+      props: {},
+    }
+  }
 
   const config = {
     headers: {
-      cookie: typeof cookie !== "undefined" ? cookie : "",
+      cookie,
     },
-  };
+  }
+
   try {
-    const { data } = await axios.get(
+    const res = await axios.get(
+      //Check if user is already logged in
       `${process.env.SERVER_URL}/api/isLoggedIn`,
       config
-    );
-    return {
-      redirect: {
-        destination: "/dashboard",
-        permanent: false,
-      },
-    };
+    )
+    if (res.data.userValidate) {
+      return {
+        redirect: {
+          destination: '/dashboard',
+          permanent: false,
+        },
+      }
+    } else {
+      return {
+        props: {},
+      }
+    }
   } catch (e) {
     return {
       props: {},
-    };
+    }
   }
 }
