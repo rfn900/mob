@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Highlight from "../layouts/Highlight";
 import HeroBlobSVG from "../svgs/HeroBlobSVG";
 import HeroBlobSVGMobile from "../svgs/HeroBlobSVGMobile";
@@ -19,11 +20,15 @@ function Hero() {
             <br className="" />
             <Highlight>You make the sale.</Highlight>
           </h4>
-          <AppButton
-            text="Become an Advertiser"
-            btnType="btn-primary"
-            className="py-3 mt-8 w-60 lg:mt-12 md:mt-8"
-          />
+          <Link href="/become-a-partner">
+            <a>
+              <AppButton
+                text="Become an Partner"
+                btnType="btn-primary"
+                className="py-3 mt-8 w-60 lg:mt-12 md:mt-8"
+              />
+            </a>
+          </Link>
         </div>
         <HeroSvg />
       </div>
