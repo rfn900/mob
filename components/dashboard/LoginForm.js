@@ -1,21 +1,21 @@
-import { useState, useContext } from "react";
-import { useRouter } from "next/router";
-import AuthContext from "../../context/AuthContext";
+import { useState, useContext } from 'react'
+import { useRouter } from 'next/router'
+import AuthContext from '../../context/AuthContext'
 export default function LoginForm() {
-  const [formFields, setFormFields] = useState(null);
-  const router = useRouter();
-  const { login, error } = useContext(AuthContext);
+  const [formFields, setFormFields] = useState(null)
+  const router = useRouter()
+  const { login, error } = useContext(AuthContext)
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const user = login(formFields);
-    if (user) router.push("/dashboard");
-  };
+    e.preventDefault()
+    const user = await login(formFields)
+    if (user) router.push('/dashboard')
+  }
 
   const handleChange = (value, id) => {
-    const payload = { ...formFields };
-    payload[id] = value;
-    setFormFields(payload);
-  };
+    const payload = { ...formFields }
+    payload[id] = value
+    setFormFields(payload)
+  }
   return (
     <>
       <h2 className="font-mono font-bold text-xl md:text-2xl lg:text-4xl">
@@ -57,5 +57,5 @@ export default function LoginForm() {
         )}
       </form>
     </>
-  );
+  )
 }
