@@ -8,8 +8,8 @@ import User from "../../models/users";
 const validateCookie = async (cookie) => {
   if (!cookie) return false;
   const token = cookie.split("=")[1];
-  const { userId } = jwt.verify(token, process.env.JWT_SECRET);
   try {
+    const { userId } = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findOne({ _id: userId });
     if (!user) return false;
   } catch (e) {
