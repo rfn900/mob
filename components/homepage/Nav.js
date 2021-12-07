@@ -38,7 +38,9 @@ function Nav() {
         </Link>
         <div className="justify-around hidden m-auto text-lg font-thin w-96 lg:flex">
           <div className="min-w-max">
-            <Link href="">Case Study</Link>
+            <Highlight classes="transform transition origin-left scale-0 -ml-2 group-hover:scale-100">
+              <Link href="">Case Study</Link>
+            </Highlight>
           </div>
           <div className="min-w-max">
             <Link href="">About Us</Link>
