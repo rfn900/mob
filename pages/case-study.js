@@ -1,4 +1,10 @@
-import ShapeSVG from '../components/svgs/ShapeSVG'
+import Layout from '../components/layouts/Layout'
 export default function caseStudy() {
-  return <ShapeSVG />
+  return (
+    <Layout>
+      <div className="section-full text-4xl items-center justify-center">
+        Comming Soon...
+      </div>
+    </Layout>
+  )
 }

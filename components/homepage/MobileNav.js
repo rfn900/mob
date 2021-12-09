@@ -1,16 +1,16 @@
-import { AppButton } from "./AppButton";
-import { RiFacebookFill } from "react-icons/ri";
-import { FiInstagram } from "react-icons/fi";
-import { RiLinkedinBoxLine } from "react-icons/ri";
-import { scroller } from "react-scroll";
+import { AppButton } from './AppButton'
+import { RiFacebookFill } from 'react-icons/ri'
+import { FiInstagram } from 'react-icons/fi'
+import { RiLinkedinBoxLine } from 'react-icons/ri'
+import { scroller } from 'react-scroll'
 export default function MobileNav({ menuOpen, setMenuOpen }) {
-  const opacityTransition = menuOpen ? "opacity-100" : "opacity-0";
+  const opacityTransition = menuOpen ? 'opacity-100' : 'opacity-0'
   const scrollToContact = () =>
-    scroller.scrollTo("contact", {
+    scroller.scrollTo('contact', {
       duration: 800,
       delay: 0,
-      smooth: "easeInOutQuart",
-    });
+      smooth: 'easeInOutQuart',
+    })
 
   return (
     <div
@@ -24,10 +24,10 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
       <div className="h-px bg-gray-200 mt-4 text-gray-100"></div>
       <div className="flex flex-col py-8 text-gray-400 px-2 gap-4">
         <div className="text-xl p-2">
-          <a href="/">About Us</a>
+          <a href="/about">About Us</a>
         </div>
         <div className="text-xl p-2">
-          <a href="/">Case Study</a>
+          <a href="/case-study">Case Study</a>
         </div>
         <div className="text-xl p-2">
           <a href="/dashboard">Admin</a>
@@ -37,8 +37,8 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
           btnType="btn-secondary"
           className="px-2 mt-4 w-1/2 mx-0"
           action={() => {
-            scrollToContact();
-            setMenuOpen(false);
+            scrollToContact()
+            setMenuOpen(false)
           }}
         />
       </div>
@@ -60,5 +60,5 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
         <p className="text-sm text-gray-400">Marsian Online Group AB ©</p>
       </div>
     </div>
-  );
+  )
 }

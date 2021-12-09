@@ -1,11 +1,11 @@
-import { MailIcon } from "@heroicons/react/outline";
-import { PhoneIcon } from "@heroicons/react/outline";
-import { RiFacebookFill } from "react-icons/ri";
-import { FiInstagram } from "react-icons/fi";
-import { RiLinkedinBoxLine } from "react-icons/ri";
-import Link from "next/link";
+import { MailIcon } from '@heroicons/react/outline'
+import { PhoneIcon } from '@heroicons/react/outline'
+import { RiFacebookFill } from 'react-icons/ri'
+import { FiInstagram } from 'react-icons/fi'
+import { RiLinkedinBoxLine } from 'react-icons/ri'
+import Link from 'next/link'
 
-import Highlight from "../layouts/Highlight";
+import Highlight from '../layouts/Highlight'
 export default function Footer() {
   return (
     <div className="relative z-0 bg-gradient-to-tr from-indigo-100 to-indigo-50 mt-12 lg:mt-0 shadow-xl p-8 py-12 md:p-24 rounded-t-medium md:rounded-t-big">
@@ -13,8 +13,8 @@ export default function Footer() {
         <div className="w-full lg:w-1/2">
           <img src="/MOG_Logo_vr2_DIY.png" className="h-12" alt="Logo" />
           <p className="font-sans text-lg mt-4 text-gray-600 w-full lg:w-3/4">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore.
+            We are a content marketing agency specialized in creating high
+            converting SEO optmized content.
           </p>
           <div className="mt-8 flex gap-4 items-end">
             <div className="relative z-10">
@@ -39,13 +39,7 @@ export default function Footer() {
 
           <div className="flex flex-col gap-4 mt-4 underline">
             <div>
-              <Link href="/dashboard">Work With Us</Link>
-            </div>
-            <div>
-              <Link href="/dashboard">The Team</Link>
-            </div>
-            <div>
-              <Link href="/dashboard">Case Study</Link>
+              <Link href="/about">About us</Link>
             </div>
             <div>
               <Link href="/dashboard">Admin</Link>
@@ -62,7 +56,7 @@ export default function Footer() {
                 <MailIcon className="h-8 z-10 relative text-gray-800" />
                 <span className="h-6 w-8 z-0 bg-yellow-100 absolute bottom-1 right-0 rounded-full transform rotate-3 rounded-lg"></span>
               </div>
-              <p className="font-mono text-xl">contact@marsog.com</p>
+              <p className="font-mono text-xl">contact@marsianog.com</p>
             </div>
             <div className="flex gap-2 items-center">
               <div className="relative z-10">
@@ -75,5 +69,5 @@ export default function Footer() {
         </div>
       </div>
     </div>
-  );
+  )
 }

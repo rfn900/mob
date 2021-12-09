@@ -14,7 +14,6 @@ export default function Login() {
 
 export async function getServerSideProps({ req }) {
   const cookie = req?.headers.cookie ?? null
-
   if (!cookie) {
     return {
       props: {},
