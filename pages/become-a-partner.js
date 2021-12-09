@@ -16,9 +16,9 @@ export default function Contactus() {
                 <Highlight>Touch</Highlight>
               </h1>
               <p className="mt-6 text-xl text-warm-gray-500 max-w-3xl">
-                Vel nunc non ut montes, viverra tempor. Proin lectus nibh
-                phasellus morbi non morbi. In elementum urna ut volutpat.
-                Sagittis et vel et fermentum amet consequat.
+                We strive to provide our partners with the best return on
+                investiment and sustained growth. Join our family of happy
+                collaborators today.
               </p>
             </div>
           </div>
@@ -182,8 +182,9 @@ export default function Contactus() {
                     Contact information
                   </h3>
                   <p className="mt-6 text-base text-gray-600 max-w-3xl">
-                    Nullam risus blandit ac aliquam justo ipsum. Quam mauris
-                    volutpat massa dictumst amet. Sapien tortor lacus arcu.
+                    Want to get the word out about your new product? Or just
+                    increase traffic on your site? Write us a few words. Explain
+                    your problem and what you are willing to achieve.
                   </p>
                   <dl className="mt-8 space-y-6">
                     <dt>
@@ -194,7 +195,7 @@ export default function Contactus() {
                         <PhoneIcon className="h-8 z-10 relative text-gray-600" />
                         <span className="h-6 w-8 z-0 bg-yellow-100 absolute bottom-1 right-0 rounded-full transform rotate-3 rounded-lg"></span>
                       </div>
-                      <span className="ml-3">+1 (555) 123-4567</span>
+                      <span className="ml-3">+46 73 871 1353</span>
                     </dd>
                     <dt>
                       <span className="sr-only">Email</span>

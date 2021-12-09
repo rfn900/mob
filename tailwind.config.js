@@ -20,7 +20,7 @@ module.exports = {
         xs: '360px',
       },
       spacing: {
-        phone: '780px',
+        phone: '680px',
         100: '28rem',
         104: '32rem',
         fuller: '120%',
