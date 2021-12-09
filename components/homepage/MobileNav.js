@@ -20,7 +20,7 @@ export default function MobileNav({ menuOpen, setMenuOpen }) {
       <div className="flex pr-4 gap-4">
         <div className="h-16 w-16 bg-white rounded-full p-2 shadow-lg">
           <Image
-            src="/Mog_Logo.png"
+            src="/MOG_logo.png"
             width={300}
             height={300}
             objectFit="contain"
