@@ -101,8 +101,11 @@ export default function Home() {
           </h1>
         </div>
         <p className="relative w-full px-6 text-center font-semi md:w-1/2 lg:text-lg">
-          Some text here to highlight all the things we do and all the services
-          we offer. Talk about yourself and stuff.
+          Forget customers! Build a community of loyal and engaged{' '}
+          <Highlight classes="-ml-5 mt-1">
+            <b>superfans</b>
+          </Highlight>{' '}
+          by providing valuable content consistently. We help you do just that.
         </p>
         <Link href="/become-a-partner">
           <a>
@@ -121,7 +124,7 @@ export default function Home() {
               <div className="flex items-center justify-center flex-1">
                 <Image
                   priority={true}
-                  src={`/${companyName}-light.png `}
+                  src={`/${companyName}-light.png`}
                   alt="collaborations"
                   width={200}
                   height={100}
