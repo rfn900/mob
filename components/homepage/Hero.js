@@ -23,7 +23,7 @@ function Hero() {
           <Link href="/become-a-partner">
             <a>
               <AppButton
-                text="Become an Partner"
+                text="Become a Partner"
                 btnType="btn-primary"
                 className="py-3 mt-8 w-60 lg:mt-12 md:mt-8"
               />

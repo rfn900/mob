@@ -1,11 +1,11 @@
-import { MailIcon } from '@heroicons/react/outline'
-import { PhoneIcon } from '@heroicons/react/outline'
-import { RiFacebookFill } from 'react-icons/ri'
-import { FiInstagram } from 'react-icons/fi'
-import { RiLinkedinBoxLine } from 'react-icons/ri'
-import Link from 'next/link'
+import { MailIcon } from "@heroicons/react/outline";
+import { PhoneIcon } from "@heroicons/react/outline";
+import { RiFacebookFill } from "react-icons/ri";
+import { FiInstagram } from "react-icons/fi";
+import { RiLinkedinBoxLine } from "react-icons/ri";
+import Link from "next/link";
 
-import Highlight from '../layouts/Highlight'
+import Highlight from "../layouts/Highlight";
 export default function Footer() {
   return (
     <div className="relative z-0 bg-gradient-to-tr from-indigo-100 to-indigo-50 mt-12 lg:mt-0 shadow-xl p-8 py-12 md:p-24 rounded-t-medium md:rounded-t-big">
@@ -14,7 +14,7 @@ export default function Footer() {
           <img src="/MOG_Logo_vr2_DIY.png" className="h-12" alt="Logo" />
           <p className="font-sans text-lg mt-4 text-gray-600 w-full lg:w-3/4">
             We are a content marketing agency specialized in creating high
-            converting SEO optmized content.
+            converting SEO optimized content.
           </p>
           <div className="mt-8 flex gap-4 items-end">
             <div className="relative z-10">
@@ -69,5 +69,5 @@ export default function Footer() {
         </div>
       </div>
     </div>
-  )
+  );
 }

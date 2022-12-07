@@ -47,7 +47,7 @@ export default function Carousel() {
             <div className="flex items-center w-full ">
               <SearchCircleIcon className="w-16 h-16 p-2 text-green-800 bg-green-100 rounded-md" />
               <p className="flex-1 ml-4 text-xl font-semibold ">
-                Search Engine Optmization
+                Search Engine Optimization
               </p>
             </div>
             <p className="py-4 text-gray-500">
